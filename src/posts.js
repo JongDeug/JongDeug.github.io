@@ -95,19 +95,20 @@ const posthtml = data => {
                                 About</a>
                         </li>
                     </ul>
+                    <hr>
                 </div>
                 <!-- //profile -->
-                <ol class="col-12 breadcrumb ms-2 mb-2 mt-3">
+                <ol class="col-12 breadcrumb ms-2 mb-2 pt-3">
                     <li class="breadcrumb-item"><a href="../../../index.html">Home</a></li>
                     <li class="breadcrumb-item"><a href="../../../posts.html">${data.attributes.subject}</a></li>
                     <li class="breadcrumb-item active">${data.attributes.title}</li>
                 </ol>
                 <!-- //breadcrumb -->
-                <div class="col">
+                <div class="col pb-3">
                     <h1>${data.attributes.title}</h1>
                     <p>${new Date(parseInt(data.attributes.date)).toDateString()}</p>
-                    <hr>
                 </div>
+                <hr>
                 <!-- //head, date -->
             </div>
                 

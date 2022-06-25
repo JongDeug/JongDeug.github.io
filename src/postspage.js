@@ -85,7 +85,7 @@ const postspage = posts => {
     <main class="main">
         <div class="container">
             <div class="row row-header">
-                <ol class="col-12 breadcrumb ps-2 pt-4 pt-sm-auto">
+                <ol class="col-12 breadcrumb ps-2">
                     <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
                     <li class="breadcrumb-item active">Posts</li>
                 </ol>
