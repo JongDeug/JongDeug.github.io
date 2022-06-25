@@ -34,7 +34,7 @@ const posthtml = data => {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 
     <!-- Highlight.js CSS-->
     <link rel="stylesheet" href="/node_modules/highlight.js/styles/atom-one-dark-reasonable.css">
@@ -43,7 +43,7 @@ const posthtml = data => {
 <body>
     <nav class="navbar navbar-dark bg-black navbar-expand-sm fixed-top">
         <div class="container">
-            <a href="./index.html" class="navbar-brand">JongDeug</a>
+            <a href="../../index.html" class="navbar-brand">JongDeug</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -51,13 +51,13 @@ const posthtml = data => {
             <div class="collapse navbar-collapse justify-content-end" id="navContent">
                 <ul class="navbar-nav">
                     <li class="nav-item mt-1 mb-1 mt-sm-auto mb-sm-auto">
-                        <a href="./index.html" class="nav-link active"><i class="bi bi-house-fill"></i> Home</a>
+                        <a href="../../index.html" class="nav-link active"><i class="bi bi-house-fill"></i> Home</a>
                     </li>
                     <li class="nav-item mb-1 mb-sm-auto">
-                        <a href="./posts.html" class="nav-link"><i class="bi bi-stickies-fill"></i> Posts</a>
+                        <a href="../../posts.html" class="nav-link"><i class="bi bi-stickies-fill"></i> Posts</a>
                     </li>
                     <li class="nav-item mb-1 mb-sm-auto">
-                        <a href="./about.html" class="nav-link"><i class="bi bi-file-person-fill"></i> About Me</a>
+                        <a href="../../about.html" class="nav-link"><i class="bi bi-file-person-fill"></i> About Me</a>
                     </li>
                 </ul>
             </div>
@@ -80,7 +80,7 @@ const posthtml = data => {
         <div class="container">
             <div class="row row-profile border-bottom pb-2">
                 <div class="col-12 text-center">
-                    <img src="/img/profile.jpg" alt="" class="img-thumbnail rounded-circle profile">
+                    <img src="../../img/profile.jpg" alt="" class="img-thumbnail rounded-circle profile">
                     <h2 class="mb-3">JongDeug</h2>
                     <p>까먹으면 다시 여기로!!!!</p>
 
@@ -92,13 +92,13 @@ const posthtml = data => {
                             &middot;
                         </li>
                         <li class="list-inline-item">
-                            <a href="./about.html" class="text-decoration-none link-dark"><i class="bi bi-file-person-fill"></i>
+                            <a href="../../about.html" class="text-decoration-none link-dark"><i class="bi bi-file-person-fill"></i>
                                 About</a>
                         </li>
                     </ul>
                 </div>
                 <ol class="col breadcrumb ms-2 mb-2">
-                    <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
                     <li class="breadcrumb-item active">${data.attributes.title}</li>
                 </ol>
             </div>
@@ -121,9 +121,9 @@ const posthtml = data => {
                 <div class="col">
                     <ul class="list-inline">
                         <li class="list-inline-item fw-bold">Links : </li>
-                        <li class="list-inline-item"><a href="./index.html">Home</a></li>
-                        <li class="list-inline-item"><a href="./posts.html">Posts</a></li>
-                        <li class="list-inline-item"><a href="./about.html">About Me</a></li>
+                        <li class="list-inline-item"><a href="../../index.html">Home</a></li>
+                        <li class="list-inline-item"><a href="../../posts.html">Posts</a></li>
+                        <li class="list-inline-item"><a href="../../about.html">About Me</a></li>
                     </ul>
                 </div>
             </div>
