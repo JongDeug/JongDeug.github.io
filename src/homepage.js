@@ -18,7 +18,7 @@ const homepage = posts => {
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    
+
     <!-- highlight CSS-->
     <link rel="stylesheet" href="./node_modules/highlight.js/styles/atom-one-dark.css"></link> 
     
@@ -29,7 +29,7 @@ const homepage = posts => {
 <body>
     <nav class="navbar navbar-dark bg-black navbar-expand-sm fixed-top">
         <div class="container">
-            <a href="/index.html" class="navbar-brand">JongDeug</a>
+            <a href="./index.html" class="navbar-brand">JongDeug</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -37,13 +37,13 @@ const homepage = posts => {
             <div class="collapse navbar-collapse justify-content-end" id="navContent">
                 <ul class="navbar-nav">
                     <li class="nav-item mt-1 mb-1 mt-sm-auto mb-sm-auto">
-                        <a href="#" class="nav-link active"><i class="bi bi-house-fill"></i> Home</a>
+                        <a href="./index.html" class="nav-link active"><i class="bi bi-house-fill"></i> Home</a>
                     </li>
                     <li class="nav-item mb-1 mb-sm-auto">
-                        <a href="/posts.html" class="nav-link"><i class="bi bi-stickies-fill"></i> Posts</a>
+                        <a href="./posts.html" class="nav-link"><i class="bi bi-stickies-fill"></i> Posts</a>
                     </li>
                     <li class="nav-item mb-1 mb-sm-auto">
-                        <a href="/about.html" class="nav-link"><i class="bi bi-file-person-fill"></i> About Me</a>
+                        <a href="./about.html" class="nav-link"><i class="bi bi-file-person-fill"></i> About Me</a>
                     </li>
                 </ul>
             </div>
@@ -78,7 +78,7 @@ const homepage = posts => {
                             &middot;
                         </li>
                         <li class="list-inline-item">
-                            <a href="/about.html" class="text-decoration-none link-dark"><i class="bi bi-file-person-fill"></i>
+                            <a href="./about.html" class="text-decoration-none link-dark"><i class="bi bi-file-person-fill"></i>
                                 About</a>
                         </li>
                     </ul>
@@ -113,9 +113,9 @@ const homepage = posts => {
                 <div class="col">
                     <ul class="list-inline">
                         <li class="list-inline-item fw-bold">Links : </li>
-                        <li class="list-inline-item"><a href="/index.html">Home</a></li>
-                        <li class="list-inline-item"><a href="/posts.html">Posts</a></li>
-                        <li class="list-inline-item"><a href="/about.html">About Me</a></li>
+                        <li class="list-inline-item"><a href="./index.html">Home</a></li>
+                        <li class="list-inline-item"><a href="./posts.html">Posts</a></li>
+                        <li class="list-inline-item"><a href="./about.html">About Me</a></li>
                     </ul>
                 </div>
             </div>
