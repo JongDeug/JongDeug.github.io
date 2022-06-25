@@ -49,7 +49,7 @@
         <div class="container">
             <div class="row">
                 <div class="col d-none d-lg-block">
-                    <h1 class="fst-italic">Welcome to my blog</h1>
+                    <span class="fst-italic fs-1 fw-bold">Welcome to my blog</span>
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
 
     <main class="main">
         <div class="container">
-            <div class="row row-profile border-bottom pb-2">
+            <div class="row row-profile">
                 <div class="col-12 text-center">
                     <img src="../../../img/profile.jpg" alt="" class="img-thumbnail rounded-circle profile">
                     <h2 class="mb-3">JongDeug</h2>
@@ -77,18 +77,22 @@
                         </li>
                     </ul>
                 </div>
-                <ol class="col breadcrumb ms-2 mb-2">
+                <!-- //profile -->
+                <ol class="col-12 breadcrumb ms-2 mb-2 mt-3">
                     <li class="breadcrumb-item"><a href="../../../index.html">Home</a></li>
                     <li class="breadcrumb-item"><a href="../../../posts.html">Java</a></li>
                     <li class="breadcrumb-item active">My new react workflow with parcel</li>
                 </ol>
+                <!-- //breadcrumb -->
+                <div class="col">
+                    <h1>My new react workflow with parcel</h1>
+                    <p>Fri Apr 03 2020</p>
+                    <hr>
+                </div>
+                <!-- //head, date -->
             </div>
-            <!-- //profile -->
                 
-            <div class="row row-content mt-3">
-                <h1>My new react workflow with parcel</h1>
-                <p>Fri Apr 03 2020</p>
-                <hr>
+            <div class="row row-content">
                 <p>Hello everybody 👋, I hope you’re staying safe out there in these trying times. I haven’t written anything in a while due to this situation but I thought why not share my new react workflow since some people might find it interesting, so here we go.</p>
 <p>I’ve almost always used create-react-app as my react starter, sometimes Gatsby or Next.js for Static Sites &amp; Server Side Rendering respectively, but mostly create-react-app for all my Single Page Apps. However as some of you might know the internals of create-react-app are abstracted away using the react-scripts package. This helps beginners like me get easily started without having to worry about webpack. But I was curious on how it actually worked and decided to make a react application from scratch.</p>
 <p>While learning about bundlers I discovered <a href="https://parceljs.org/">parcel</a> a bundler that requires zero configuration and works right out of the box. This got me really excited and after a few steps I got parcel working with react as well, here’s how I set it up. Also make sure to stick around till the end to see a super easy way to get started using a tiny package I made.</p>

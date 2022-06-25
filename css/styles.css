@@ -11,6 +11,12 @@ body {
     padding: 100px 0px;
 }
 
+@media (max-width: 540px) {
+    .jumbotron{
+        padding: 70px 0;
+    }
+}
+
 .navbar-brand {
     font-family: 'Righteous', cursive;
 }

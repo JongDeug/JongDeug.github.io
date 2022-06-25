@@ -68,7 +68,7 @@ const posthtml = data => {
         <div class="container">
             <div class="row">
                 <div class="col d-none d-lg-block">
-                    <h1 class="fst-italic">Welcome to my blog</h1>
+                    <span class="fst-italic fs-1 fw-bold">Welcome to my blog</span>
                 </div>
             </div>
         </div>
@@ -77,7 +77,7 @@ const posthtml = data => {
 
     <main class="main">
         <div class="container">
-            <div class="row row-profile border-bottom pb-2">
+            <div class="row row-profile">
                 <div class="col-12 text-center">
                     <img src="../../../img/profile.jpg" alt="" class="img-thumbnail rounded-circle profile">
                     <h2 class="mb-3">JongDeug</h2>
@@ -96,18 +96,22 @@ const posthtml = data => {
                         </li>
                     </ul>
                 </div>
-                <ol class="col breadcrumb ms-2 mb-2">
+                <!-- //profile -->
+                <ol class="col-12 breadcrumb ms-2 mb-2 mt-3">
                     <li class="breadcrumb-item"><a href="../../../index.html">Home</a></li>
                     <li class="breadcrumb-item"><a href="../../../posts.html">${data.attributes.subject}</a></li>
                     <li class="breadcrumb-item active">${data.attributes.title}</li>
                 </ol>
+                <!-- //breadcrumb -->
+                <div class="col">
+                    <h1>${data.attributes.title}</h1>
+                    <p>${new Date(parseInt(data.attributes.date)).toDateString()}</p>
+                    <hr>
+                </div>
+                <!-- //head, date -->
             </div>
-            <!-- //profile -->
                 
-            <div class="row row-content mt-3">
-                <h1>${data.attributes.title}</h1>
-                <p>${new Date(parseInt(data.attributes.date)).toDateString()}</p>
-                <hr>
+            <div class="row row-content">
                 ${data.body}
             </div>
             <!-- //content -->

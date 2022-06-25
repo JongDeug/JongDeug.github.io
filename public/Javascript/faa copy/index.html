@@ -49,7 +49,7 @@
         <div class="container">
             <div class="row">
                 <div class="col d-none d-lg-block">
-                    <h1 class="fst-italic">Welcome to my blog</h1>
+                    <span class="fst-italic fs-1 fw-bold">Welcome to my blog</span>
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
 
     <main class="main">
         <div class="container">
-            <div class="row row-profile border-bottom pb-2">
+            <div class="row row-profile">
                 <div class="col-12 text-center">
                     <img src="../../../img/profile.jpg" alt="" class="img-thumbnail rounded-circle profile">
                     <h2 class="mb-3">JongDeug</h2>
@@ -77,18 +77,22 @@
                         </li>
                     </ul>
                 </div>
-                <ol class="col breadcrumb ms-2 mb-2">
+                <!-- //profile -->
+                <ol class="col-12 breadcrumb ms-2 mb-2 mt-3">
                     <li class="breadcrumb-item"><a href="../../../index.html">Home</a></li>
                     <li class="breadcrumb-item"><a href="../../../posts.html">Javascript</a></li>
                     <li class="breadcrumb-item active">How I built ‘grotesk’</li>
                 </ol>
+                <!-- //breadcrumb -->
+                <div class="col">
+                    <h1>How I built ‘grotesk’</h1>
+                    <p>Sun Feb 02 2020</p>
+                    <hr>
+                </div>
+                <!-- //head, date -->
             </div>
-            <!-- //profile -->
                 
-            <div class="row row-content mt-3">
-                <h1>How I built ‘grotesk’</h1>
-                <p>Sun Feb 02 2020</p>
-                <hr>
+            <div class="row row-content">
                 <h3 id="what-is-grotesk">What is grotesk?</h3>
 <p>Grotesk is a css library and react component that aims to make web typography simple. The reason I built it is because I&#39;ve noticed that I start almost every static website off with the same set of themes or typographic rules, so I decided to build a tiny library that I can just plug into my next project easily. Since I mostly only work on react applications or plain ol&#39; static websites I made a react component and a css library.</p>
 <h3 id="goals">Goals</h3>

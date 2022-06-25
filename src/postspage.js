@@ -71,11 +71,11 @@ const postspage = posts => {
     </nav>
     <!-- //nav -->
 
-    <header class="jumbotron d-none d-sm-block">
+    <header class="jumbotron">
         <div class="container">
             <div class="row">
                 <div class="col d-none d-lg-block">
-                    <h1 class="fst-italic">Welcome to my blog</h1>
+                    <span class="fst-italic fs-1 fw-bold">Welcome to my blog</span>
                 </div>
             </div>
         </div>
@@ -90,7 +90,7 @@ const postspage = posts => {
                     <li class="breadcrumb-item active">Posts</li>
                 </ol>
                 <div class="col">
-                    <h2 class="mb-3">Posts</h2>
+                    <h1 class="mb-3">Posts</h1>
                     <hr>
                 </div>
             </div>
