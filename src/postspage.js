@@ -71,7 +71,7 @@ const postspage = posts => {
     </nav>
     <!-- //nav -->
 
-    <header class="jumbotron">
+    <header class="jumbotron padding">
         <div class="container">
             <div class="row">
                 <div class="col d-none d-lg-block">

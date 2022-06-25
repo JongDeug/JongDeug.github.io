@@ -8,14 +8,10 @@ body {
     background: #d7a7aa;
     color: floralwhite;
     margin: 0 auto;
-    padding: 100px 0px;
+    padding: 100px 0;
 }
 
-@media (max-width: 540px) {
-    .jumbotron{
-        padding: 70px 0;
-    }
-}
+.padding {}
 
 .navbar-brand {
     font-family: 'Righteous', cursive;
@@ -52,4 +48,14 @@ body {
     top: -100px;
     left: 50%;
     transform: translate(-50%, 0);
+}
+
+@media (max-width: 540px) {
+    .padding {
+        padding: 70px 0;
+    }
+
+    .row-header {
+        padding-top: 30px;
+    }
 }
