@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JongDeug's Blog</title>
+
+    <!-- Bootstrap  CSS-->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-black navbar-expand-sm fixed-top">
+        <div class="container">
+            <a href="/index.html" class="navbar-brand">JongDeug</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item mt-1 mb-1 mt-sm-auto mb-sm-auto">
+                        <a href="/index.html" class="nav-link"><i class="bi bi-house-fill"></i> Home</a>
+                    </li>
+                    <li class="nav-item mb-1 mb-sm-auto">
+                        <a href="/posts.html" class="nav-link"><i class="bi bi-stickies-fill"></i> Posts</a>
+                    </li>
+                    <li class="nav-item mb-1 mb-sm-auto">
+                        <a href="#" class="nav-link active"><i class="bi bi-file-person-fill"></i> About Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- //nav -->
+
+    <header class="jumbotron d-none d-sm-block">
+        <div class="container">
+            <div class="row">
+                <div class="col d-none d-lg-block">
+                    <h1 class="fst-italic">Welcome to my blog</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- //header, jumbotron -->
+
+    <main class="main">
+        <div class="container">
+            <div class="row row-header">
+                <ol class="col-12 breadcrumb ms-2 pt-4 pt-sm-auto">
+                    <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+                    <li class="breadcrumb-item active">About Me</li>
+                </ol>
+                <div class="col">
+                    <h2 class="mb-3">About Me</h2>
+                    <hr>
+                </div>
+            </div>
+            <!-- //breadcrumb -->
+
+            <div class="row row-content">
+                <div class="col">
+                    <div class="d-flex align-items-center pb-3">
+                        <div class="flex-shrink-0 me-5">
+                            <img src="img/profile.jpg" alt="" class="img-thumbnail rounded-circle">
+                        </div>
+                        <div class="flex-grow-1">
+                            <h2 class="mb-3">JongDeug</h2>
+                            <p>안녕하세요! 저는 초보 웹 개발자 입니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-content">
+
+            </div>
+            <!-- //content -->
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    <ul class="list-inline">
+                        <li class="list-inline-item fw-bold">Links : </li>
+                        <li class="list-inline-item"><a href="/index.html">Home</a></li>
+                        <li class="list-inline-item"><a href="/posts.html">Posts</a></li>
+                        <li class="list-inline-item"><a href="/about.html">About Me</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    <span>© Copyright 2022 JongDeug's Blog</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <!-- Bootstrap Javascript -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
