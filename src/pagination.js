@@ -1,4 +1,4 @@
-const posts = document.querySelectorAll('.row-content');
+const posts = document.querySelectorAll('.row-content'); // 일렬로 나열된 posts 저장
 
 
 const itemsPerPage = 4;

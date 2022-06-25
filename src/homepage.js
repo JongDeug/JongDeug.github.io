@@ -89,7 +89,7 @@ const homepage = posts => {
             <div class="posts">
                 ${posts
                     .map(post => `<div class="row row-content">
-                        <h3><a href="/public/${post.path}" class="text-decoration-none link-danger">${post.attributes.title}</a></h3>
+                        <h3><a href="./public/${post.path}" class="text-decoration-none link-danger">${post.attributes.title}</a></h3>
                         <small>${new Date(parseInt(post.attributes.date)).toDateString()}</small>
                         <p class="mt-4">${post.attributes.description}</p>
                         </div>
