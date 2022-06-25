@@ -1,6 +1,7 @@
 ---
 title: Building a simple static site generator in node.js
 date: 1583777940720
+subject: React
 description: The process of building a simple static site generator powered by markdown using only node.js
 ---
 

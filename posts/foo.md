@@ -1,6 +1,7 @@
 ---
 title: Why I'm starting a blog
 date: "1514764800000"
+subject: Java
 description: My reasons for starting a blog.
 ---
 

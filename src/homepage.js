@@ -14,8 +14,6 @@ const homepage = posts => {
     <title>${config.blogName}</title>
 
     <!-- Bootstrap  CSS-->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
@@ -89,7 +87,7 @@ const homepage = posts => {
             <div class="posts">
                 ${posts
                     .map(post => `<div class="row row-content">
-                        <h3><a href="./public/${post.path}" class="text-decoration-none link-danger">${post.attributes.title}</a></h3>
+                        <h3><a href="./public/${post.attributes.subject}/${post.path}" class="text-decoration-none link-danger">${post.attributes.title}</a></h3>
                         <small>${new Date(parseInt(post.attributes.date)).toDateString()}</small>
                         <p class="mt-4">${post.attributes.description}</p>
                         </div>
@@ -129,11 +127,10 @@ const homepage = posts => {
     <!-- //footer -->
 
     <!-- Bootstrap Javascript -->
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     
     <!-- Front Javascript -->
-    <script src="src/pagination.js"></script>
+    <script src="./src/front/pagination.js"></script>
 </body>
 
 </html>`;

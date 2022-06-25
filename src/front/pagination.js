@@ -1,6 +1,5 @@
 const posts = document.querySelectorAll('.row-content'); // 일렬로 나열된 posts 저장
 
-
 const itemsPerPage = 4;
 const totalPages = Math.ceil(posts.length / itemsPerPage);
 console.log(totalPages); //3

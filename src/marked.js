@@ -1,6 +1,5 @@
 const marked = require('marked');
 
-
 marked.setOptions({
     renderer: new marked.Renderer(),
     highlight: function (code, lang) {

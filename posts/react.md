@@ -1,6 +1,7 @@
 ---
 title: My new react workflow with parcel
 date: 1585920436498
+subject: C
 description: Moving away from create-react-app & learning to bundle my own assets
 ---
 

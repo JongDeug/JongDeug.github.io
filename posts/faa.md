@@ -1,6 +1,7 @@
 ---
 title: How I built ‘grotesk’
 date: 1580587200000
+subject: Javascript
 description: The reason I built grotesk was to stop myself from repeating the same typographic styles in every project. Learn more about how I did it in the post.
 ---
 
