@@ -16,7 +16,7 @@ function paintItems(_currentPage) {
     space.innerHTML = '';
 
     for (let i = (currentPage - 1) * itemsPerPage; i < currentPage * itemsPerPage && i < posts.length; i++) {
-        space.innerHTML += `<div class="row row-content"><div class="col-12 overflow-hidden">${posts[i].innerHTML}</div></div>`;
+        space.innerHTML += `<div class="row row-content fade show"><div class="col-12 overflow-hidden">${posts[i].innerHTML}</div></div>`;
     }
 }
 
