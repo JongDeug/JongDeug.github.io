@@ -1,0 +1,130 @@
+$breadcrumb-divider-color: gray;
+$breadcrumb-divider: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='#{$breadcrumb-divider-color}'/></svg>");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Righteous&display=swap");
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+$color-rose: #d7a7aa;
+
+@mixin zero-margin($up-dn, $left-right) {
+    margin: 0 auto;
+    padding: $up-dn $left-right;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.jumbotron {
+    background: #d7a7aa;
+    color: floralwhite;
+    @include zero-margin(100px, 0);
+}
+
+.padding {
+}
+
+.navbar-brand {
+    font-family: "Righteous", cursive;
+}
+
+.main {
+    min-height: 800px;
+    position: relative;
+}
+
+.footer {
+    background: $color-rose;
+    @include zero-margin(20px, 0);
+}
+
+.row-profile {
+    padding-top: 110px;
+}
+
+.row-header {
+    padding-top: 50px;
+}
+
+.row-content {
+    @include zero-margin(50px, 0);
+    border-bottom: 1px ridge;
+    min-height: 250px;
+}
+
+.profile {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+/* utterances customize */
+.utterances {
+    max-width: 100% !important;
+}
+
+/* pagination customize */
+// .pagination > li > a {
+//     background-color: white;
+//     color: $color-rose;
+// }
+
+.pagination {
+    li {
+        a {
+            background-color: white;
+            color: $color-rose;
+        }
+    }
+}
+
+// .pagination > .active > a {
+//     color: white;
+//     background-color: $color-rose !important;
+//     border: solid 1px $color-rose !important;
+// }
+
+.pagination {
+    .active {
+        a {
+            color: white;
+            background-color: $color-rose !important;
+            border: solid 1px $color-rose !important;
+        }
+    }
+}
+
+// .pagination > li > a:focus,
+// .pagination > li > a:hover {
+//     color: $color-rose;
+// }
+
+.pagination {
+    li {
+        a:focus, a:hover{
+            color: $color-rose;
+        }
+    }
+}
+
+// .pagination > .active > a:hover {
+//     color: white;
+// }
+
+.pagination {
+    .active {
+        a:hover{
+            color: white;
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    .padding {
+        padding: 70px 0;
+    }
+
+    .row-header {
+        padding-top: 30px;
+    }
+}

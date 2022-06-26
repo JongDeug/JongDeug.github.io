@@ -4,3 +4,13 @@ https://ansohxxn.github.io/blog/utterances/
 
 <git password 물어볼 때>
 https://bgpark.tistory.com/46
+
+<무진장 도움되는>
+https://inpa.tistory.com/259
+https://inpa.tistory.com/259
+
+bootstrap scss를 css로 압축 해제하고 
+bootstrap 변수를 통해서 css를 제어한다.
+
+<!default 플래그>
+https://designmeme.github.io/ko/blog/sass-variables-and-default-flag/

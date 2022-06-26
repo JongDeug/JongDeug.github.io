@@ -105,14 +105,16 @@ const posthtml = data => {
                                 About</a>
                         </li>
                     </ul>
-                    <hr>
                 </div>
+                <hr>
                 <!-- //profile -->
-                <ol class="col-12 breadcrumb ms-2 mb-2 pt-3">
+                <nav>
+                <ol class="col-12 breadcrumb ps-2 mb-2 pt-3">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                     <li class="breadcrumb-item"><a href="../../../posts.html">${data.attributes.subject}</a></li>
                     <li class="breadcrumb-item active">${data.attributes.title}</li>
                 </ol>
+                </nav>
                 <!-- //breadcrumb -->
                 <div class="col pb-3">
                     <h1>${data.attributes.title}</h1>
