@@ -1,5 +1,5 @@
 const posts = document.querySelectorAll('.row-content'); // 일렬로 나열된 posts 저장
-
+console.log(posts[0].childNodes[1].childNodes[0].attributes[0].nodeValue);
 const itemsPerPage = 4;
 const totalPages = Math.ceil(posts.length / itemsPerPage);
 console.log(totalPages); //3
@@ -15,7 +15,10 @@ function paintItems(_currentPage) {
     space.innerHTML = '';
 
     for (let i = (currentPage - 1) * itemsPerPage; i < currentPage * itemsPerPage && i < posts.length; i++) {
-        space.innerHTML += `<div class="row row-content"><div class="col-12 overflow-hidden">${posts[i].innerHTML}</div></div>`;
+        space.innerHTML += `<div class="row row-content" onclick="location.href='${posts[i].childNodes[1].childNodes[0].attributes[0].nodeValue}'">
+        <div class="col-12 overflow-hidden">
+        ${posts[i].innerHTML}
+        </div></div>`;
     }
 }
 
