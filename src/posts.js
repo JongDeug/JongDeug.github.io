@@ -141,6 +141,13 @@ const posthtml = data => {
                 </div>
             </div> 
             <!-- //utterances -->
+            <script src="https://utteranc.es/client.js"
+            repo="JongDeug/JongDeug.github.io"
+            issue-term="pathname"
+            theme="gruvbox-dark"
+            crossorigin="anonymous"
+            async>
+            </script>
         </div>
     </main>
     <!-- //main -->

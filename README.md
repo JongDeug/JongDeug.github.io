@@ -11,6 +11,6 @@ Node.js
 
 #### <프레임 워크>
 Bootstrap
-법
+
 #### <시작 방법>
 git clone 후 npm install
