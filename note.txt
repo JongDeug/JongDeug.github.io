@@ -1,2 +1,6 @@
 <utterances 참고>
 https://ansohxxn.github.io/blog/utterances/
+
+
+<git password 물어볼 때>
+https://bgpark.tistory.com/46
