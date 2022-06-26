@@ -1,5 +1,5 @@
 # JongDueg.github.io
-개발 공부를 기록하는 블로그입니다.
+## 개발 공부를 기록하는 블로그입니다.
 
 <개발 언어>
 HTML, CSS, JAVASCRIPT
