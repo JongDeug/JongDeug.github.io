@@ -113,7 +113,7 @@ const postspage = posts => {
             <div class="row text-center">
                 <div class="col">
                     <ul class="list-inline">
-                        <li class="list-inline-item fw-bold">Links : </li>
+                        <li class="list-inline-item">Links : </li>
                         <li class="list-inline-item"><a href="./index.html">Home</a></li>
                         <li class="list-inline-item"><a href="./posts.html">Posts</a></li>
                         <li class="list-inline-item"><a href="./about.html">About Me</a></li>

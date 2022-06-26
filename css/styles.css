@@ -50,8 +50,30 @@ body {
     transform: translate(-50%, 0);
 }
 
+/* utterances customize */
 .utterances {
     max-width: 100% !important;
+}
+
+/* pagination customize */
+.pagination>li>a {
+    background-color: white;
+    color: #d7a7aa;
+}
+
+.pagination>.active>a {
+    color: white;
+    background-color: #d7a7aa !Important;
+    border: solid 1px #d7a7aa !Important;
+}
+
+.pagination>li>a:focus,
+.pagination>li>a:hover {
+    color: #d7a7aa;
+}
+
+.pagination>.active>a:hover {
+    color: white;
 }
 
 @media (max-width: 540px) {
