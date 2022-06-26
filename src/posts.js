@@ -116,9 +116,23 @@ const posthtml = data => {
                 ${data.body}
             </div>
             <!-- //content -->
+
+            <div class="row">
+                <div class="col-12">
+                    <script src="https://utteranc.es/client.js"
+                    repo="JongDeug/JongDueg.github.io"
+                    issue-term="pathname"
+                    theme="photon-dark"
+                    crossorigin="anonymous"
+                    async>
+                    </script>
+                </div>
+            </div> 
+            <!-- //utterances -->
         </div>
     </main>
     <!-- //main -->
+
 
     <footer class="footer">
         <div class="container">
@@ -154,8 +168,8 @@ const createPosts = posts => {
             if (!fs.existsSync(`${config.dev.outputdir}/${post.attributes.subject}`)) {
                 // 하위 폴더 생성
                 fs.mkdirSync(`${config.dev.outputdir}/${post.attributes.subject}`);
-            // 하위 폴더가 있다면
-            }else{
+                // 하위 폴더가 있다면
+            } else {
                 // 최하위 폴더 생성
                 fs.mkdirSync(`${config.dev.outputdir}/${post.attributes.subject}/${post.path}`);
             }

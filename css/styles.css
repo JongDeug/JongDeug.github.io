@@ -50,6 +50,10 @@ body {
     transform: translate(-50%, 0);
 }
 
+.utterances {
+    max-width: 100% !important;
+}
+
 @media (max-width: 540px) {
     .padding {
         padding: 70px 0;
