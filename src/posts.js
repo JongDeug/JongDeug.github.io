@@ -129,25 +129,18 @@ const posthtml = data => {
             </div>
             <!-- //content -->
 
+            <!-- //utterances -->
             <div class="row">
                 <div class="col-12">
                     <script src="https://utteranc.es/client.js"
-                    repo="JongDeug/JongDueg.github.io"
+                    repo="JongDeug/JongDeug.github.io"
                     issue-term="pathname"
-                    theme="photon-dark"
+                    theme="gruvbox-dark"
                     crossorigin="anonymous"
                     async>
-                    </script>
-                </div>
-            </div> 
-            <!-- //utterances -->
-            <script src="https://utteranc.es/client.js"
-            repo="JongDeug/JongDeug.github.io"
-            issue-term="pathname"
-            theme="gruvbox-dark"
-            crossorigin="anonymous"
-            async>
-            </script>
+                    </script> 
+                </div> 
+            </div>
         </div>
     </main>
     <!-- //main -->
