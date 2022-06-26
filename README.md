@@ -13,6 +13,4 @@ Node.js
 Bootstrap
 법
 #### <시작 방법>
-git clone 후 npm install 끝
-
-끝
+git clone 후 npm install
