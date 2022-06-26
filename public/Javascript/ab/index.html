@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sharing my development experience">
+    <title>JongDeug's Blog</title>
+
+    <!-- Bootstrap  CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../../css/styles.css">
+
+    <!-- Highlight.js CSS-->
+    <link rel="stylesheet" href="/node_modules/highlight.js/styles/atom-one-dark-reasonable.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/atom-one-dark-reasonable.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TXJRS1NF2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8TXJRS1NF2');
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-black navbar-expand-sm fixed-top">
+        <div class="container">
+            <a href="/" class="navbar-brand">JongDeug</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item mt-1 mb-1 mt-sm-auto mb-sm-auto">
+                        <a href="/" class="nav-link active"><i class="bi bi-house-fill"></i> Home</a>
+                    </li>
+                    <li class="nav-item mb-1 mb-sm-auto">
+                        <a href="../../../posts.html" class="nav-link"><i class="bi bi-stickies-fill"></i> Posts</a>
+                    </li>
+                    <li class="nav-item mb-1 mb-sm-auto">
+                        <a href="../../../about.html" class="nav-link"><i class="bi bi-file-person-fill"></i> About Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- //nav -->
+
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col d-none d-lg-block">
+                    <span class="fst-italic fs-1 fw-bold">Welcome to my blog</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- //header, jumbotron -->
+
+    <main class="main">
+        <div class="container">
+            <div class="row row-profile">
+                <div class="col-12 text-center">
+                    <img src="../../../img/profile.jpg" alt="" class="img-thumbnail rounded-circle profile">
+                    <h2 class="mb-3">JongDeug</h2>
+                    <p>까먹으면 다시 여기로!!!!</p>
+
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="https://github.com/JongDeug" target="_blank" class="text-decoration-none link-dark"><i class="bi bi-github"></i> Github</a>
+                        </li>
+                        <li class="list-inline-item">
+                            &middot;
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="../../../about.html" class="text-decoration-none link-dark"><i class="bi bi-file-person-fill"></i>
+                                About</a>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+                <!-- //profile -->
+                <nav>
+                <ol class="col-12 breadcrumb ps-2 mb-2 pt-3">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../../../posts.html">Javascript</a></li>
+                    <li class="breadcrumb-item active">How I built ‘grotesk’</li>
+                </ol>
+                </nav>
+                <!-- //breadcrumb -->
+                <div class="col pb-3">
+                    <h1>How I built ‘grotesk’</h1>
+                    <p>Sun Feb 02 2020</p>
+                </div>
+                <hr>
+                <!-- //head, date -->
+            </div>
+                
+            <div class="row row-content">
+                <h3 id="what-is-grotesk">What is grotesk?</h3>
+<p>Grotesk is a css library and react component that aims to make web typography simple. The reason I built it is because I&#39;ve noticed that I start almost every static website off with the same set of themes or typographic rules, so I decided to build a tiny library that I can just plug into my next project easily. Since I mostly only work on react applications or plain ol&#39; static websites I made a react component and a css library.</p>
+<h3 id="goals">Goals</h3>
+<p>The goal with grotesk was not to be an end all of styling it&#39;s supposed to be a very minimal stater that can support your regular styling. For a single theme the minified css file comes in at only <code>1.8kb</code> which I think is quite amazing.</p>
+<p>It also strives to make customization as easy as possible offering more than 15 different variables you can work with.</p>
+<h3 id="how-it-works">How it works</h3>
+<p>I built grotesk.css using scss for variables and customization (because of css custom properties&#39; comparatively low browser support). This was the first project I used scss in and I have to say the workflow with the live sass compiler in VS Code is very smooth and the dev experience was very enjoyable.</p>
+<p>Since this was my first ever npm package I decided to go with something simple for the react component so I decided to use <code>create-react-library</code> which made it extremely easy to build and publish the component. For the styling and customization I decided to go with emotion as I wanted something simple yet powerful that could be dynamically themed.</p>
+<h3 id="customization">Customization</h3>
+<p>Customization was very simple to implement in the css library because all the user had to do was change the scss variables at the top of the file and the rest would be managed by the power of scss. For the react component however it was a bit more complex.</p>
+<p>The way I decided to go about it was to allow the user to add an optional <code>theme</code> prop to their <code>&lt;Grotesk&gt;</code> component. It takes an object that allows them to change the variables and if any properties are excluded they revert to the default.</p>
+<p>Here is an example theme:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> theme = {
+  <span class="hljs-attr">bg</span>: <span class="hljs-string">&quot;#ffffff&quot;</span>,
+  <span class="hljs-attr">fgBody</span>: <span class="hljs-string">&quot;#2d3748&quot;</span>,
+  <span class="hljs-attr">fgHeadings</span>: <span class="hljs-string">&quot;#000000&quot;</span>,
+  <span class="hljs-attr">hrColor</span>: <span class="hljs-string">&quot;rgba(0, 0, 0, 0.07)&quot;</span>,
+  <span class="hljs-attr">linkColor</span>: <span class="hljs-string">&quot;#8a4baf&quot;</span>,
+  <span class="hljs-attr">preBg</span>: <span class="hljs-string">&quot;rgba(0, 0, 0, 0.04)&quot;</span>,
+  <span class="hljs-attr">preColor</span>: <span class="hljs-string">&quot;#2d3748&quot;</span>,
+  <span class="hljs-attr">inlineCodeBg</span>: <span class="hljs-string">&quot;rgba(0, 0, 0, 0.04)&quot;</span>,
+  <span class="hljs-attr">inlineCodeColor</span>: <span class="hljs-string">&quot;hsl(0, 79 %, 63 %)&quot;</span>,
+  <span class="hljs-attr">quoteBg</span>: <span class="hljs-string">&quot;#ffffff&quot;</span>,
+  <span class="hljs-attr">quoteBorder</span>: <span class="hljs-string">&quot;#8a4baf&quot;</span>,
+  <span class="hljs-attr">quoteColor</span>: <span class="hljs-string">&quot;#6a727c&quot;</span>,
+  <span class="hljs-attr">fontFamMain</span>: <span class="hljs-string">&quot;space-grotesk, sans-serif&quot;</span>,
+  <span class="hljs-attr">fontFamMono</span>:
+    <span class="hljs-string">&#x27;Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot; monospace&#x27;</span>,
+  <span class="hljs-attr">lineHtMain</span>: <span class="hljs-string">&quot;1.5&quot;</span>,
+  <span class="hljs-attr">lineHtMono</span>: <span class="hljs-string">&quot;1&quot;</span>
+};
+</code></pre>
+<h3 id="grotesk-vs-groteskcss">grotesk vs grotesk.css</h3>
+<p>Which one is for you? I would personally recommend the css library for almost all people. Even if you are using a react project, for most cases the css library is good enough. The only cases where I would recommend the react component is when your project already uses emotion or if you are planning to do a lot of dynamic theming (like more than two themes).</p>
+<h3 id="my-process">My process</h3>
+<p>For the css library my process was very simple, all I did was first of all create the html file with all the content i wanted to style and then I started off working on <code>grotesk.light.scss</code> . Since I use VS code the compiling was very simple with the amazing Live Sass compiler plugin (highly recommend it).</p>
+<p>For the react component however the process was a bit more complicated but as I mentioned above emotion and create-react-library really do help out, especially if you&#39;re a beginner like me.</p>
+<h3 id="final-notes">Final notes</h3>
+<p>I&#39;m sure there&#39;s probably some bugs in there that I haven&#39;t yet encountered and I might be doing many other things wrong but that&#39;s the reason I&#39;ve open sourced the project. Just head over to <a href="https://github.com/kartiknair/grotesk">github</a> if you encounter any bugs and open an issue and I&#39;ll look into it asap. Also if you think you can improve grotesk just open a PR with your contribution and I&#39;ll add it in. Let&#39;s take full advantage of the power of open source guys.</p>
+<p>P.S: I would love to add a &quot;Websites that use grotesk&quot; section to the README, so if you&#39;ve made a website using grotesk or if you have any feature requests just DM me over at twitter ([at]nairkartik_), I would love to hear from you. Peace. ✌️</p>
+
+            </div>
+            <!-- //content -->
+
+            <!-- //utterances -->
+            <div class="row">
+                <div class="col-12">
+                    <script src="https://utteranc.es/client.js"
+                    repo="JongDeug/JongDeug.github.io"
+                    issue-term="pathname"
+                    theme="gruvbox-dark"
+                    crossorigin="anonymous"
+                    async>
+                    </script> 
+                </div> 
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Links : </li>
+                        <li class="list-inline-item"><a href="/">Home</a></li>
+                        <li class="list-inline-item"><a href="../../../posts.html">Posts</a></li>
+                        <li class="list-inline-item"><a href="../../../about.html">About Me</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    © Copyright 2022 Kim Jong Hwan 
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <!-- Bootstrap Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
