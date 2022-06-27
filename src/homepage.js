@@ -2,8 +2,8 @@
  * index.html 파일 생성기
  */
 
-const fs = require('fs');
-const config = require('./config');
+import * as fs from "fs";
+import config from "./config.js";
 
 const indexhtml = posts => {
     return `<!DOCTYPE html>
@@ -156,4 +156,5 @@ const addHomepage = posts => {
     });
 }
 
-module.exports = addHomepage;
+export default addHomepage;
+

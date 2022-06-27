@@ -2,12 +2,12 @@
  * npm marked 옵션 설정 
  */
 
-const marked = require('marked');
+import { marked } from "marked";
+import hljs from "highlight.js";
 
 marked.setOptions({
     renderer: new marked.Renderer(),
     highlight: function (code, lang) {
-        const hljs = require('highlight.js');
         const language = hljs.getLanguage(lang) ? lang : 'plaintext';
         return hljs.highlight(code, {language}).value;
     },
@@ -20,4 +20,4 @@ marked.setOptions({
     xhtml: false
 });
 
-module.exports = marked;
+export default marked;

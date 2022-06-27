@@ -2,8 +2,8 @@
  * posts.html 파일 생성기
  */
 
-const fs = require('fs');
-const config = require('./config');
+import * as fs from "fs";
+import config from "./config.js";
 
 const postshtml = posts => {
     return `<!DOCTYPE html>
@@ -158,4 +158,4 @@ const addPostspage = posts => {
     });
 }
 
-module.exports = addPostspage;
+export default addPostspage;

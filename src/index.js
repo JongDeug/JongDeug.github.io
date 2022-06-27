@@ -2,11 +2,11 @@
  * main 파일
  */
 
-const fs = require('fs');
-const config = require('./config');
-const postMethods = require('./post-generator');
-const addHomepage = require('./homepage');
-const addPostspage= require('./postspage');
+import * as fs from "fs";
+import config from "./config.js";
+import * as postMethods from "./post-generator.js"; //그냥 쓰려면 import {changeMdToObj, createPosts}
+import addHomepage from "./homepage.js";
+import addPostspage from "./postspage.js";
 
 // 게시물.md 파일들을 객체로 변환(Synchronous) 
 const posts = fs

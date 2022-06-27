@@ -11,6 +11,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
     "front-matter": "^4.0.2",
     "highlight.js": "^11.5.1",

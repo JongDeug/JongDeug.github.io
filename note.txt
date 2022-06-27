@@ -14,3 +14,8 @@ bootstrap 변수를 통해서 css를 제어한다.
 
 <!default 플래그>
 https://designmeme.github.io/ko/blog/sass-variables-and-default-flag/
+
+
+<import export>
+export default값이 있는 경우에는 import * as bla from "bla" 에서 bla.뭐시기()가 안되고 bla.default.뭐시기()로 됨
+없는 경우에는 괜찮음

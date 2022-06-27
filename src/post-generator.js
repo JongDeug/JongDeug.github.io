@@ -2,10 +2,10 @@
  * 게시물.md -> 게시물.html 생성기
  */
 
-const fs = require('fs');
-const fm = require('front-matter');
-const marked = require('./marked');
-const config = require('./config');
+import * as fs from "fs";
+import fm from "front-matter";
+import marked from "./marked.js";
+import config from "./config.js";
 
 const posthtml = data => {
     return `<!DOCTYPE html>
@@ -163,15 +163,15 @@ const posthtml = data => {
 </body>`;
 }
 
-const changeMdToObj = postPath => {
+export const changeMdToObj = postPath => {
     const data = fs.readFileSync(`${config.dev.postdir}/${postPath}.md`, 'utf-8');
     const content = fm(data);
-    content.body = marked.marked(content.body);
+    content.body = marked(content.body);
     content.path = postPath;
     return content;
 }
 
-const createPosts = posts => {
+export const createPosts = posts => {
     if (!fs.existsSync(config.dev.outputdir)) fs.mkdirSync(config.dev.outputdir);
 
     posts.forEach(post => {
@@ -193,9 +193,4 @@ const createPosts = posts => {
             }
         );
     });
-}
-
-module.exports = {
-    changeMdToObj: changeMdToObj,
-    createPosts: createPosts
 }
