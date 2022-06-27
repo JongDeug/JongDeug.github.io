@@ -6,7 +6,16 @@ const posts = document.querySelectorAll('.row-content');
 
 const itemsPerPage = 4;
 const totalPages = Math.ceil(posts.length / itemsPerPage);
-let currentPage = 1;
+let currentPage;
+
+// 새로고침해도 currentPage가 고정되게끔 설정
+if (sessionStorage.getItem('currentPage') === null) {
+    sessionStorage.setItem('currentPage', "1");
+    currentPage = 1;
+} else {
+    currentPage = parseInt(sessionStorage.getItem('currentPage'));
+}
+
 
 function paintItems(_currentPage) {
     const space = document.querySelector('.main .container .posts');
@@ -23,10 +32,14 @@ function paintItems(_currentPage) {
         ${posts[i].innerHTML}
         </div></div>`;
     }
+
+    // 변경된 currentPage 저장
+    sessionStorage.setItem('currentPage', currentPage.toString());
 }
 
-function paintPageNum(currentPage) {
+function paintPageNum(_currentPage) {
     const ul = document.querySelector('.pagination');
+    let pageNum = _currentPage;
     ul.innerHTML = '';
     ul.innerHTML += `<li class="page-item">
                         <a class="page-link" onclick="javascript:goToPre()" aria-label="Previous">
@@ -34,7 +47,11 @@ function paintPageNum(currentPage) {
                         </a>
                     </li>`;
 
-    for (let i = 1; i <= totalPages; i++) {
+    if (pageNum % 3 === 0) pageNum -= 2;
+    else if (pageNum % 3 === 1) pageNum -= 0;
+    else if (pageNum % 3 === 2) pageNum -= 1;
+
+    for (let i = pageNum; i <= totalPages && i <= (pageNum + 2); i++) {
         if (currentPage === i) {
             ul.innerHTML += `<li class="page-item active"><a class="page-link" onclick="javascript:goToPage(${i})">${i}</a></li>`;
         } else {
