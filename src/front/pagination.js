@@ -1,14 +1,17 @@
-const posts = document.querySelectorAll('.row-content'); // 일렬로 나열된 posts 저장
-console.log(posts[0].childNodes[1].childNodes[0].attributes[0].nodeValue);
+/**
+ * 나열된 게시글들을 pagination으로 재정렬
+ */
+
+const posts = document.querySelectorAll('.row-content');
+
 const itemsPerPage = 4;
 const totalPages = Math.ceil(posts.length / itemsPerPage);
-console.log(totalPages); //3
 let currentPage = 1;
 
 function paintItems(_currentPage) {
     const space = document.querySelector('.main .container .posts');
 
-    // _currentPage와 currentPage는 다른 변수. 주의.
+    // Caution: _currentPage와 currentPage는 다른 변수.
     if (_currentPage < 1) currentPage = 1;
     if (_currentPage > totalPages) currentPage = totalPages;
 
@@ -48,13 +51,11 @@ function paintPageNum(currentPage) {
 
 function goToNext() {
     paintItems(++currentPage);
-    // console.log(currentPage);
     paintPageNum(currentPage);
 }
 
 function goToPre() {
     paintItems(--currentPage);
-    // console.log(currentPage);
     paintPageNum(currentPage);
 }
 

@@ -1,8 +1,11 @@
+/**
+ * index.html 파일 생성기
+ */
+
 const fs = require('fs');
 const config = require('./config');
 
-
-const homepage = posts => {
+const indexhtml = posts => {
     return `<!DOCTYPE html>
 <html lang="en">
 
@@ -75,7 +78,7 @@ const homepage = posts => {
             <div class="row row-profile pb-5 border-bottom">
                 <div class="col text-center">
                     <img src="img/profile.jpg" alt="" class="img-thumbnail rounded-circle profile">
-                    <h2 class="mb-3">JongDeug</h2>
+                    <h2 class="mb-3">${config.authorName.nickname}</h2>
                     <p>까먹으면 다시 여기로!!!!</p>
 
                     <ul class="list-inline">
@@ -101,7 +104,7 @@ const homepage = posts => {
                         <small>${new Date(parseInt(post.attributes.date)).toDateString()}</small>
                         <p class="mt-4">${post.attributes.description}</p>
                         </div> 
-                    `).join('') //join하지 않으면 배열이라 ,가 나옴 
+                    `).join('') // 배열이라 joing 해주지 않으면 ','가 표시됨.
                 } 
             </div>
             <!-- //content -->
@@ -129,7 +132,7 @@ const homepage = posts => {
             </div>
             <div class="row text-center">
                 <div class="col">
-                    © Copyright ${new Date().getFullYear()} ${config.authorName} 
+                    © Copyright ${new Date().getFullYear()} ${config.authorName.name} 
                 </div>
             </div>
         </div>
@@ -147,9 +150,9 @@ const homepage = posts => {
 }
 
 const addHomepage = posts => {
-    fs.writeFileSync('./index.html', homepage(posts), (err) => {
+    fs.writeFile('./index.html', indexhtml(posts), (err) => {
         if (err) throw err;
-        console.log('index.html was created successfully');
+        console.log('index.html(homepage) was created successfully');
     });
 }
 

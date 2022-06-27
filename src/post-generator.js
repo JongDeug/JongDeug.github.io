@@ -1,20 +1,11 @@
+/**
+ * 게시물.md -> 게시물.html 생성기
+ */
+
 const fs = require('fs');
 const fm = require('front-matter');
 const marked = require('./marked');
 const config = require('./config');
-
-
-// md 파일을 html 형식으로 변경
-const createPost = postName => {
-    const data = fs.readFileSync(`${config.dev.postdir}/${postName}.md`, 'utf-8');
-    const content = fm(data);
-    // console.log(content);
-    content.body = marked.marked(content.body);
-    // console.log(content.body);
-    content.path = postName;
-    // console.log(content);
-    return content;
-}
 
 const posthtml = data => {
     return `<!DOCTYPE html>
@@ -90,7 +81,7 @@ const posthtml = data => {
             <div class="row row-profile">
                 <div class="col-12 text-center">
                     <img src="../../../img/profile.jpg" alt="" class="img-thumbnail rounded-circle profile">
-                    <h2 class="mb-3">JongDeug</h2>
+                    <h2 class="mb-3">${config.authorName.nickname}</h2>
                     <p>까먹으면 다시 여기로!!!!</p>
 
                     <ul class="list-inline">
@@ -160,7 +151,7 @@ const posthtml = data => {
             </div>
             <div class="row text-center">
                 <div class="col">
-                    © Copyright ${new Date().getFullYear()} ${config.authorName} 
+                    © Copyright ${new Date().getFullYear()} ${config.authorName.name} 
                 </div>
             </div>
         </div>
@@ -172,17 +163,23 @@ const posthtml = data => {
 </body>`;
 }
 
+const changeMdToObj = postPath => {
+    const data = fs.readFileSync(`${config.dev.postdir}/${postPath}.md`, 'utf-8');
+    const content = fm(data);
+    content.body = marked.marked(content.body);
+    content.path = postPath;
+    return content;
+}
+
 const createPosts = posts => {
+    if (!fs.existsSync(config.dev.outputdir)) fs.mkdirSync(config.dev.outputdir);
+
     posts.forEach(post => {
-        // 최하위 폴더가 없다면
+        // post가 존재하지 않는다면
         if (!fs.existsSync(`${config.dev.outputdir}/${post.attributes.subject}/${post.path}`)) {
-            // 하위 폴더가 없다면
             if (!fs.existsSync(`${config.dev.outputdir}/${post.attributes.subject}`)) {
-                // 하위 폴더 생성
                 fs.mkdirSync(`${config.dev.outputdir}/${post.attributes.subject}`);
-                // 하위 폴더가 있다면
             } else {
-                // 최하위 폴더 생성
                 fs.mkdirSync(`${config.dev.outputdir}/${post.attributes.subject}/${post.path}`);
             }
         }
@@ -191,14 +188,14 @@ const createPosts = posts => {
             `${config.dev.outputdir}/${post.attributes.subject}/${post.path}/index.html`,
             posthtml(post),
             (err) => {
-                if (err) throw err; // 에러 처리
+                if (err) throw err;
                 console.log(`${post.path}/index.html was created successfully`);
             }
-        )
-    })
+        );
+    });
 }
 
 module.exports = {
-    createPost: createPost,
+    changeMdToObj: changeMdToObj,
     createPosts: createPosts
 }

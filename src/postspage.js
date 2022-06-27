@@ -1,32 +1,11 @@
+/**
+ * posts.html 파일 생성기
+ */
+
 const fs = require('fs');
 const config = require('./config');
 
-function createAccordionItems(posts) {
-    const subjects = fs.readdirSync(`${config.dev.outputdir}`);
-    let html = ``;
-
-    subjects.map((subject,index) => {
-        html += `
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse${index}">
-                    ${subject} (${posts.filter(post => post.attributes.subject === subject).length})
-                    </button>
-                </h2>
-                <div id="collapse${index}" class="accrodion-collapse collapse" data-bs-parent="#postList">
-                    ${posts.filter(post => post.attributes.subject === subject)
-                    .map(post => `<div class="accordion-body">
-                                    <a href="./${config.dev.outputdir}/${post.attributes.subject}/${post.path}">${post.attributes.title}</a>
-                                </div>`).join("")}
-                </div>
-            </div>
-        `;
-    });
-    return html;
-}
-
-const postspage = posts => {
+const postshtml = posts => {
     return `<!DOCTYPE html>
 <html lang="en">
 
@@ -132,7 +111,7 @@ const postspage = posts => {
             </div>
             <div class="row text-center">
                 <div class="col">
-                    <span>© Copyright ${new Date().getFullYear()} ${config.authorName}</span>
+                    <span>© Copyright ${new Date().getFullYear()} ${config.authorName.name}</span>
                 </div>
             </div>
         </div>
@@ -147,10 +126,35 @@ const postspage = posts => {
 </html>`;
 }
 
+function createAccordionItems(posts) {
+    const subjects = fs.readdirSync(`${config.dev.outputdir}`);
+    let innerHtml = ``;
+
+    subjects.map((subject, index) => {
+        innerHtml += `
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse${index}">
+                    ${subject} (${posts.filter(post => post.attributes.subject === subject).length})
+                    </button>
+                </h2>
+                <div id="collapse${index}" class="accrodion-collapse collapse" data-bs-parent="#postList">
+                    ${posts.filter(post => post.attributes.subject === subject)
+                .map(post => `<div class="accordion-body">
+                                    <a href="./${config.dev.outputdir}/${post.attributes.subject}/${post.path}">${post.attributes.title}</a>
+                            </div>`).join("")}
+                </div>
+            </div>
+        `;
+    });
+    return innerHtml;
+}
+
 const addPostspage = posts => {
-    fs.writeFile('./posts.html', postspage(posts), (err) => {
+    fs.writeFile('./posts.html', postshtml(posts), (err) => {
         if (err) throw err;
-        console.log('posts.html was created successfully');
+        console.log('posts.html(postspage) was created successfully');
     });
 }
 
