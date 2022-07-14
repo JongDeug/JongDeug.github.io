@@ -7,13 +7,13 @@ Jekyll, Hexo 같은 정적 블로그 생성기를 통해 만든 것이 아니고
 
 #### <개발 관련 설명>
 1. 개발 언어 
-    HTML, CSS, JAVASCRIPT
+    - HTML, CSS, JAVASCRIPT
 
 2. 개발 환경
-    Node.js
+    - Node.js
 
 3. 프레임 워크
-    Bootstrap
+    - Bootstrap
 
 #### <시작 방법>
 git clone 후 npm install
