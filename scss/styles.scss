@@ -63,12 +63,6 @@ body {
     max-width: 100% !important;
 }
 
-/* pagination customize */
-// .pagination > li > a {
-//     background-color: white;
-//     color: $color-rose;
-// }
-
 .pagination {
     li {
         a {
@@ -77,12 +71,6 @@ body {
         }
     }
 }
-
-// .pagination > .active > a {
-//     color: white;
-//     background-color: $color-rose !important;
-//     border: solid 1px $color-rose !important;
-// }
 
 .pagination {
     .active {
@@ -94,26 +82,18 @@ body {
     }
 }
 
-// .pagination > li > a:focus,
-// .pagination > li > a:hover {
-//     color: $color-rose;
-// }
-
 .pagination {
     li {
-        a:focus, a:hover{
+        a:focus,
+        a:hover {
             color: $color-rose;
         }
     }
 }
 
-// .pagination > .active > a:hover {
-//     color: white;
-// }
-
 .pagination {
     .active {
-        a:hover{
+        a:hover {
             color: white;
         }
     }
