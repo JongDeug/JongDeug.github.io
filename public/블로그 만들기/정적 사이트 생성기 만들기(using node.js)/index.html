@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sharing my development experience">
+    <title>JongDeug's Blog</title>
+
+    <!-- Bootstrap  CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../../css/styles.css">
+
+    <!-- Highlight.js CSS-->
+    <link rel="stylesheet" href="/node_modules/highlight.js/styles/atom-one-dark-reasonable.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/atom-one-dark-reasonable.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TXJRS1NF2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8TXJRS1NF2');
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-black navbar-expand-sm fixed-top">
+        <div class="container">
+            <a href="/" class="navbar-brand">JongDeug</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item mt-1 mb-1 mt-sm-auto mb-sm-auto">
+                        <a href="/" class="nav-link active"><i class="bi bi-house-fill"></i> Home</a>
+                    </li>
+                    <li class="nav-item mb-1 mb-sm-auto">
+                        <a href="../../../posts.html" class="nav-link"><i class="bi bi-stickies-fill"></i> Posts</a>
+                    </li>
+                    <li class="nav-item mb-1 mb-sm-auto">
+                        <a href="../../../about.html" class="nav-link"><i class="bi bi-file-person-fill"></i> About Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- //nav -->
+
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col d-none d-lg-block">
+                    <span class="fst-italic fs-1 fw-bold">Welcome to my blog</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- //header, jumbotron -->
+
+    <main class="main">
+        <div class="container">
+            <div class="row row-profile">
+                <div class="col-12 text-center">
+                    <img src="../../../img/profile.jpg" alt="" class="img-thumbnail rounded-circle profile">
+                    <h2 class="mb-3">JongDeug</h2>
+                    <p>까먹으면 다시 여기로!!!!</p>
+
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="https://github.com/JongDeug" target="_blank" class="text-decoration-none link-dark"><i class="bi bi-github"></i> Github</a>
+                        </li>
+                        <li class="list-inline-item">
+                            &middot;
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="../../../about.html" class="text-decoration-none link-dark"><i class="bi bi-file-person-fill"></i>
+                                About</a>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+                <!-- //profile -->
+                <nav>
+                <ol class="col-12 breadcrumb ps-2 mb-2 pt-3">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../../../posts.html">블로그 만들기</a></li>
+                    <li class="breadcrumb-item active">정적 사이트 생성기 만들기(using node.js)</li>
+                </ol>
+                </nav>
+                <!-- //breadcrumb -->
+                <div class="col pb-3">
+                    <h1>정적 사이트 생성기 만들기(using node.js)</h1>
+                    <br>
+                    <p>Invalid Date</p>
+                </div>
+                <hr>
+                <!-- //head, date -->
+            </div>
+                
+            <div class="row row-content">
+                <h2 id="정적-사이트-생성기란">정적 사이트 생성기란?</h2>
+<p>정적 사이트 생성기(SSG, Static Site Generator).  정적 사이트 생성기란 말 그대로 정적 사이트를 생성해 주는 프로그램을 말합니다. 사용자들이 입력한 값 등 요청에 의하여 생성되는 동적 사이트와 달리,  정적 사이트는 서버에 미리 저장된 파일들을 그대로 전달합니다. 그래서 작성자가 글을 작성하고 업데이트하는 것 외에 별달리 기능이 없는 블로그에 많이 사용됩니다.</p>
+<p>많이들 알고 계시는 Jekyll, Hugo, Hexo 등 여러 가지 정적 사이트 생성기가 존재합니다. 하지만 저는 블로그 자체를 직접 만들어보고 싶다는 생각에 구글링을 하여 node.js로 만들 수 있는 방법을 찾았습니다.    </p>
+<h2 id="핵심">핵심</h2>
+<p>md 파일을 html 파일로 변환하는 것이 핵심입니다.<br>1차적으로 모듈들을 사용하여 데이터를 가공하고, 가공한 데이터를 가지고 템플릿에 적용하여 html 파일을 생성합니다.    </p>
+<h2 id="모듈-설치">모듈 설치</h2>
+<ul>
+<li>front-matter  : YAML 추출과 md 파일 내용 등을 객체로 추출하기 위해 사용.</li>
+<li>marked : md 파일 내용을 html 코드로 변환하기 위해 사용.</li>
+<li>highlight.js : 코드를 이쁘게 정돈해 주기 위한 라이브러리.</li>
+</ul>
+<pre><code>&gt; npm init    
+&gt; npm i front-matter marked highlight.js
+</code></pre>
+<h2 id="문서-구조">문서 구조</h2>
+<pre><code>디렉토리
+├── node_modules
+├── package-lock.json
+├── package.json
+├── posts
+│   └── 포스트.md
+└── src
+    ├── index.js
+    ├── marked.js
+    └── post-generator.js
+</code></pre>
+<p>이 구조대로 폴더와 js 파일을 만드시면 됩니다.<br>포스트.md 양식 파일은 <a href="">이곳</a>에 들어가면 있습니다.</p>
+<h2 id="설정">설정</h2>
+<h5 id="packagejson"><em>package.json</em></h5>
+<pre><code>&quot;scripts&quot;: {
+     &quot;build&quot;: &quot;node ./src/index.js&quot;
+ },
+&quot;type&quot;: &quot;module&quot;
+</code></pre>
+<p>scripts에  build 부분을 추가하고, import 문법을 사용하기 위해 type을 추가시킵니다.    </p>
+<h2 id="코드">코드</h2>
+<p><strong>//marked.js file</strong></p>
+<pre><code>import { marked } from &quot;marked&quot;;
+import hljs from &quot;highlight.js&quot;; 
+
+marked.setOptions({
+    renderer: new marked.Renderer(),
+    highlight: function (code, lang) {
+        const language = hljs.getLanguage(lang) ? lang : &#x27;plaintext&#x27;;
+        return hljs.highlight(code, {language}).value;
+    },
+    pedantic: false,
+    gfm: true,
+    breaks: false,
+    sanitize: false,
+    smartLists: true,
+    smartypants: false,
+    xhtml: false
+}); 
+
+export default marked;
+</code></pre>
+<p>marked 옵션에 highlight 설정을 추가시켜 줍시다.<br><br><br></p>
+<p><strong>//index.js(main)</strong></p>
+<pre><code>import * as fs from &quot;fs&quot;;
+import * as postMethods from &quot;./post-generator.js&quot;;
+
+const posts = fs
+  .readdirSync(&#x27;./posts&#x27;)
+  .map(post =&gt; post.slice(0, -3)) // 확장자 제거(md)
+  .map(post =&gt; postMethods.changeMdToObj(post));
+
+postMethods.createPosts(posts);
+</code></pre>
+<p>동기적으로 실행해야 하기 때문에 readdirSync() 함수를 사용합니다. </p>
+<ol>
+<li>posts 폴더의 md 파일을 읽고 </li>
+<li>확장자를 제거한 후 </li>
+<li>changeMdToObj() 함수를 통해 객체 형태로 posts 변수에 담습니다. </li>
+<li>마지막으로 객체 형태인 posts 변수를 createPosts() 함수를 통해 html 파일로 만듭니다.<br><br><br></li>
+</ol>
+<p><strong>//post-generator.js file</strong></p>
+<ol>
+<li>changeMdToObj()</li>
+</ol>
+<pre><code>export const changeMdToObj = postPath =&gt; {
+    const data = fs.readFileSync(`./posts/${postPath}.md`, &#x27;utf-8&#x27;);
+    const content = fm(data); // YAML 추출
+    content.body = marked(content.body); // md 파일을 html 형태로 변환
+    content.path = postPath;
+    return content;
+}
+</code></pre>
+<p>fm() 함수로 md 파일의 YAML 부분을 추출하고 body 부분을 marked() 함수를 통해 html 형태로 바꿔주는 코드입니다. fm 함수의 반환값이 궁금하시다면 <a href="https://www.npmjs.com/package/front-matter">https://www.npmjs.com/package/front-matter</a> 을 참고하시면 되겠습니다. </p>
+<ol start="2">
+<li>createPosts()</li>
+</ol>
+<pre><code>export const createPosts = posts =&gt; {
+    if(!fs.existsSync(&#x27;./public&#x27;)) fs.mkdirSync(&#x27;./public&#x27;); // public 폴더가 없다면 생성
+
+    posts.forEach(post =&gt; {
+        if(!fs.existsSync(`./public/${post.path}`)) fs.mkdirSync(`./public/${post.path}`);
+
+        fs.writeFile(`./public/${post.path}/index.html`,
+        posthtml(post),
+        (err) =&gt; {
+            if(err) throw err;
+            console.log(`${post.path}/index.html was created successfully`);
+        });
+    });
+}
+</code></pre>
+<p>public 폴더가 존재하지 않는다면 생성을 해주고, posthtml() 템플릿을 통해 html 파일을 public 폴더 안에 생성해 줍니다. </p>
+<ol start="3">
+<li>전체 코드</li>
+</ol>
+<pre><code>import * as fs from &quot;fs&quot;;
+import fm from &quot;front-matter&quot;;
+import marked from &quot;./marked.js&quot;;
+
+const posthtml = data =&gt; {
+    return `&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;${data.attributes.title}&lt;/h1&gt;
+    &lt;br&gt;
+    &lt;p&gt;${new Date(parseInt(data.attributes.date)).toDateString()}&lt;/p&gt;
+
+    &lt;div class=&quot;content&quot;&gt;
+        ${data.body}
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;`;
+}
+
+export const changeMdToObj = postPath =&gt; {
+    const data = fs.readFileSync(`./posts/${postPath}.md`, &#x27;utf-8&#x27;);
+    const content = fm(data); // YAML 추출
+    content.body = marked(content.body); // md 파일을 html 형태로 변환
+    content.path = postPath;
+    return content;
+}
+
+export const createPosts = posts =&gt; {
+    if(!fs.existsSync(&#x27;./public&#x27;)) fs.mkdirSync(&#x27;./public&#x27;); // public 폴더가 없다면 생성
+
+    posts.forEach(post =&gt; {
+        if(!fs.existsSync(`./public/${post.path}`)) fs.mkdirSync(`./public/${post.path}`);
+
+        fs.writeFile(`./public/${post.path}/index.html`,
+        posthtml(post),
+        (err) =&gt; {
+            if(err) throw err;
+            console.log(`${post.path}/index.html was created successfully`);
+        });
+    });
+}
+</code></pre>
+<h2 id="실행">실행</h2>
+<pre><code>npm run build
+</code></pre>
+<h2 id="내-블로그-깃헙">내 블로그 깃헙</h2>
+<p>현재 코드보다 조금 더 완성된 정적 사이트를 보고 싶으시다면 제 <a href="https://github.com/JongDeug/JongDeug.github.io">깃헙</a>을 참고하시면 될 것 같습니다. 완벽하지 않지만 개선하고 있습니다!</p>
+<h2 id="참고-자료">참고 자료</h2>
+<ol>
+<li><a href="https://betterprogramming.pub/how-to-build-a-simple-static-site-generator-using-node-js-6425b71272e0">https://betterprogramming.pub/how-to-build-a-simple-static-site-generator-using-node-js-6425b71272e0</a>    </li>
+<li><a href="https://bohyeon-n.github.io/deploy/nodejs/blogindex.html">https://bohyeon-n.github.io/deploy/nodejs/blogindex.html</a></li>
+</ol>
+<h2 id="마치며">마치며</h2>
+<p>잘못된 점이나 개선할 점이 있다면 꼭 알려주시길 바랍니다! 부족한 글 읽어주셔서 감사합니다.</p>
+
+            </div>
+            <!-- //content -->
+
+            <!-- //utterances -->
+            <div class="row">
+                <div class="col-12">
+                    <script src="https://utteranc.es/client.js"
+                    repo="JongDeug/JongDeug.github.io"
+                    issue-term="pathname"
+                    theme="gruvbox-dark"
+                    crossorigin="anonymous"
+                    async>
+                    </script> 
+                </div> 
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Links : </li>
+                        <li class="list-inline-item"><a href="/">Home</a></li>
+                        <li class="list-inline-item"><a href="../../../posts.html">Posts</a></li>
+                        <li class="list-inline-item"><a href="../../../about.html">About Me</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    © Copyright 2022 Kim Jong Hwan 
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <!-- Bootstrap Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- link set -->
+    <script src="../../../src/front/link.js"></script>
+</body>

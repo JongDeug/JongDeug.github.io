@@ -58,11 +58,12 @@ body {
     transform: translate(-50%, 0);
 }
 
-/* utterances customize */
+// utterances customize
 .utterances {
     max-width: 100% !important;
 }
 
+// pagination
 .pagination {
     li {
         a {
@@ -96,6 +97,32 @@ body {
         a:hover {
             color: white;
         }
+    }
+}
+
+code {
+    background-color: #ffebee;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5%;
+}
+
+.row-content {
+    li {
+        margin-left: 20px;
+        font-size: 1.1em;
+    }
+
+    h2{
+        margin-top: 20px;
+    }
+
+    h2:first-child{
+        margin-top: 0;
+    }
+
+    p{
+        font-size: 1.1em;
     }
 }
 

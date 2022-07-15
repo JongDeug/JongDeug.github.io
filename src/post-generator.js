@@ -109,6 +109,7 @@ const posthtml = data => {
                 <!-- //breadcrumb -->
                 <div class="col pb-3">
                     <h1>${data.attributes.title}</h1>
+                    <br>
                     <p>${new Date(parseInt(data.attributes.date)).toDateString()}</p>
                 </div>
                 <hr>
@@ -160,6 +161,8 @@ const posthtml = data => {
 
     <!-- Bootstrap Javascript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- link set -->
+    <script src="../../../src/front/link.js"></script>
 </body>`;
 }
 
@@ -179,6 +182,7 @@ export const createPosts = posts => {
         if (!fs.existsSync(`${config.dev.outputdir}/${post.attributes.subject}/${post.path}`)) {
             if (!fs.existsSync(`${config.dev.outputdir}/${post.attributes.subject}`)) {
                 fs.mkdirSync(`${config.dev.outputdir}/${post.attributes.subject}`);
+                fs.mkdirSync(`${config.dev.outputdir}/${post.attributes.subject}/${post.path}`);
             } else {
                 fs.mkdirSync(`${config.dev.outputdir}/${post.attributes.subject}/${post.path}`);
             }

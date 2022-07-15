@@ -1,7 +1,6 @@
 <utterances 참고>
 https://ansohxxn.github.io/blog/utterances/
 
-
 <git password 물어볼 때>
 https://bgpark.tistory.com/46
 
@@ -15,6 +14,8 @@ bootstrap 변수를 통해서 css를 제어한다.
 <!default 플래그>
 https://designmeme.github.io/ko/blog/sass-variables-and-default-flag/
 
+<정적 웹 사이트>
+https://betterprogramming.pub/how-to-build-a-simple-static-site-generator-using-node-js-6425b71272e0
 
 <import export>
 export default값이 있는 경우에는 import * as bla from "bla" 에서 bla.뭐시기()가 안되고 bla.default.뭐시기()로 됨
