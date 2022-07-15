@@ -100,7 +100,7 @@ const posthtml = data => {
                 <hr>
                 <!-- //profile -->
                 <nav>
-                <ol class="col-12 breadcrumb ps-2 mb-2 pt-3">
+                <ol class="col-12 breadcrumb ps-1 mb-2 pt-3">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                     <li class="breadcrumb-item"><a href="../../../posts.html">${data.attributes.subject}</a></li>
                     <li class="breadcrumb-item active">${data.attributes.title}</li>
@@ -109,8 +109,7 @@ const posthtml = data => {
                 <!-- //breadcrumb -->
                 <div class="col pb-3">
                     <h1>${data.attributes.title}</h1>
-                    <br>
-                    <p>${new Date(parseInt(data.attributes.date)).toDateString()}</p>
+                    <p class="ps-1">${new Date(parseInt(data.attributes.date)).toDateString()}</p>
                 </div>
                 <hr>
                 <!-- //head, date -->
