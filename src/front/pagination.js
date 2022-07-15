@@ -27,7 +27,7 @@ function paintItems(_currentPage) {
     space.innerHTML = '';
 
     for (let i = (currentPage - 1) * itemsPerPage; i < currentPage * itemsPerPage && i < posts.length; i++) {
-        space.innerHTML += `<div class="row row-content" onclick="location.href='${posts[i].childNodes[1].childNodes[0].attributes[0].nodeValue}'">
+        space.innerHTML += `<div class="row row-content" onclick="location.href='${encodingURI(posts, i)}'">
         <div class="col-12 overflow-hidden">
         ${posts[i].innerHTML}
         </div></div>`;
@@ -85,3 +85,10 @@ function goToPage(pageNum) {
 //set default
 paintItems(currentPage);
 paintPageNum(currentPage);
+
+
+function encodingURI(posts, i){
+    const uri = `${posts[i].childNodes[1].childNodes[0].attributes[0].nodeValue}`;
+    const encoded = encodeURI(uri);
+    return encoded;
+}
