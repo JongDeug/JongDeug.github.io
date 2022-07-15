@@ -159,7 +159,7 @@ const addHomepage = posts => {
 
 function encodingURI(post){
     const uri = `${post.attributes.subject}/${post.path}`;
-    const encoded = encodeURI(uri);
+    const encoded = decodeURI(uri);
     return encoded;
 }
 
