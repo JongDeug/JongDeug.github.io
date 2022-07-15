@@ -7,7 +7,7 @@ import config from "./config.js";
 
 const indexhtml = posts => {
     return `<!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -101,6 +101,7 @@ const indexhtml = posts => {
                 ${posts
                     .map(post => `<div class="row row-content">
                         <h3><a href="./public/${post.attributes.subject}/${post.path}" class="text-decoration-none link-danger fst-italic">${post.attributes.title}</a></h3>
+                        <a href="./public/${encodingURI(post)}">sdfsdf</a>
                         <small>${new Date(parseInt(post.attributes.date)).toDateString()}</small>
                         <p class="mt-4">${post.attributes.description}</p>
                         </div> 
@@ -154,6 +155,12 @@ const addHomepage = posts => {
         if (err) throw err;
         console.log('index.html(homepage) was created successfully');
     });
+}
+
+function encodingURI(post){
+    const uri = `./public/${post.attributes.subject}/${post.path}`;
+    const encoded = encodeURI(uri);
+    return encoded;
 }
 
 export default addHomepage;
