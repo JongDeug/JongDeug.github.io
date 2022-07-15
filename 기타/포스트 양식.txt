@@ -1,7 +1,7 @@
 ---
 title: 정적 사이트 생성기 만들기(using node.js)
 subject: 블로그 만들기
-data: 1657857215
+date: 1657874404975
 description: 정적 사이트 생성기를 만드는데 필요한 핵심 기능을 설명합니다.
 ---
 ## 정적 사이트 생성기란?
@@ -37,6 +37,7 @@ md 파일을 html 파일로 변환하는 것이 핵심입니다.
         └── post-generator.js
 
 이 구조대로 폴더와 js 파일을 만드시면 됩니다.    
+포스트.md 양식 파일은 [이곳](https://github.com/JongDeug/JongDeug.github.io/tree/master/%EA%B8%B0%ED%83%80)에 들어가면 있습니다.
 
 ## 설정
 ##### *package.json*
@@ -185,12 +186,12 @@ npm run build
 ```
 
 ## 내 블로그 깃헙
-현재 코드보다 조금 더 완성된 정적 사이트를 보고 싶으시다면 제 깃헙을 참고하시면 될 것 같습니다. 완벽하지 않지만 개선하고 있습니다!
-https://github.com/JongDeug/JongDeug.github.io    
+현재 코드보다 조금 더 완성된 정적 사이트 생성기 코드를 보고 싶으시다면 제 [깃헙](https://github.com/JongDeug/JongDeug.github.io)을 참고하시면 될 것 같습니다. 완벽하지 않지만 개선하고 있습니다!
+  
 
 ## 참고 자료 
 1. https://betterprogramming.pub/how-to-build-a-simple-static-site-generator-using-node-js-6425b71272e0    
 2. https://bohyeon-n.github.io/deploy/nodejs/blogindex.html
 
 ## 마치며
-잘못된 점이나 개선할 점이 있다면 꼭 알려주시길 바랍니다! 부족한 글 읽어주셔서 감사합니다.
+잘못된 점이나 개선할 점이 있다면 꼭 알려주시길 바랍니다! 부족한 글 읽어주셔서 감사합니다를

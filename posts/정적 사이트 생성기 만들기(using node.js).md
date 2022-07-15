@@ -1,7 +1,7 @@
 ---
 title: 정적 사이트 생성기 만들기(using node.js)
 subject: 블로그 만들기
-data: 1657857215
+date: 1657874404975
 description: 정적 사이트 생성기를 만드는데 필요한 핵심 기능을 설명합니다.
 ---
 ## 정적 사이트 생성기란?
@@ -37,7 +37,7 @@ md 파일을 html 파일로 변환하는 것이 핵심입니다.
         └── post-generator.js
 
 이 구조대로 폴더와 js 파일을 만드시면 됩니다.    
-포스트.md 양식 파일은 [이곳]()에 들어가면 있습니다.
+포스트.md 양식 파일은 [이곳](https://github.com/JongDeug/JongDeug.github.io/tree/master/%EA%B8%B0%ED%83%80)에 들어가면 있습니다.
 
 ## 설정
 ##### *package.json*
