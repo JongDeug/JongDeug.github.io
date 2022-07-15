@@ -7,7 +7,7 @@ import config from "./config.js";
 
 const indexhtml = posts => {
     return `<!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
