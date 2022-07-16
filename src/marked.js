@@ -9,6 +9,7 @@ marked.setOptions({
     renderer: new marked.Renderer(),
     highlight: function (code, lang) {
         const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+        // console.log(language);
         return hljs.highlight(code, {language}).value;
     },
     pedantic: false,

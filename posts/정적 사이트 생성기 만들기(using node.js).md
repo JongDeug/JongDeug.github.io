@@ -41,18 +41,18 @@ md 파일을 html 파일로 변환하는 것이 핵심입니다.
 
 ## 설정
 ##### *package.json*
-```
+```javascript
 "scripts": {
-     "build": "node ./src/index.js"
- },
-"type": "module"
+    "build": "node ./src/index.js"
+},
+"type": "module" 
 ```
 scripts에 build 부분을 추가하고, import 문법을 사용하기 위해 type을 추가시킵니다.    
 
 ## 코드 
 
 **//marked.js file**
-```
+```javascript
 import { marked } from "marked";
 import hljs from "highlight.js"; 
 
@@ -77,7 +77,7 @@ marked 옵션에 highlight 설정을 추가시켜 줍시다.
 <br><br>
 
 **//index.js(main)**
-```
+```javascript
 import * as fs from "fs";
 import * as postMethods from "./post-generator.js";
 
@@ -99,7 +99,7 @@ postMethods.createPosts(posts);
 **//post-generator.js file**
 1. changeMdToObj() 
 
-```
+```javascript
 export const changeMdToObj = postPath => {
     const data = fs.readFileSync(`./posts/${postPath}.md`, 'utf-8');
     const content = fm(data); // YAML 추출
@@ -111,7 +111,7 @@ export const changeMdToObj = postPath => {
 fm() 함수로 md 파일의 YAML 부분을 추출하고 body 부분을 marked() 함수를 통해 html 형태로 바꿔주는 코드입니다. fm() 함수의 반환값이 궁금하시다면 https://www.npmjs.com/package/front-matter 을 참고하시면 되겠습니다. 
 
 2. createPosts()
-```
+```javascript
 export const createPosts = posts => {
     if(!fs.existsSync('./public')) fs.mkdirSync('./public'); // public 폴더가 없다면 생성
 
@@ -130,7 +130,7 @@ export const createPosts = posts => {
 public 폴더가 존재하지 않는다면 생성을 해주고, posthtml() 템플릿을 통해 index.html 파일을 public 폴더 안에 생성해 줍니다. 
 
 3. 전체 코드
-```
+```javascript
 import * as fs from "fs";
 import fm from "front-matter";
 import marked from "./marked.js";

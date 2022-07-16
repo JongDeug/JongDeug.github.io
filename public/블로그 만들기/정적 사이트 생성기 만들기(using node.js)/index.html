@@ -16,8 +16,7 @@
     <link rel="stylesheet" href="../../../css/styles.css">
 
     <!-- Highlight.js CSS-->
-    <link rel="stylesheet" href="/node_modules/highlight.js/styles/atom-one-dark-reasonable.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/atom-one-dark-reasonable.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/base16/atelier-cave.min.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TXJRS1NF2"></script>
@@ -135,45 +134,45 @@
 <p>이 구조대로 폴더와 js 파일을 만드시면 됩니다.<br>포스트.md 양식 파일은 <a href="https://github.com/JongDeug/JongDeug.github.io/tree/master/%EA%B8%B0%ED%83%80">이곳</a>에 들어가면 있습니다.</p>
 <h2 id="설정">설정</h2>
 <h5 id="packagejson"><em>package.json</em></h5>
-<pre><code>&quot;scripts&quot;: {
-     &quot;build&quot;: &quot;node ./src/index.js&quot;
- },
-&quot;type&quot;: &quot;module&quot;
+<pre><code class="language-javascript"><span class="hljs-string">&quot;scripts&quot;</span>: {
+    <span class="hljs-string">&quot;build&quot;</span>: <span class="hljs-string">&quot;node ./src/index.js&quot;</span>
+},
+<span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;module&quot;</span> 
 </code></pre>
 <p>scripts에 build 부분을 추가하고, import 문법을 사용하기 위해 type을 추가시킵니다.    </p>
 <h2 id="코드">코드</h2>
 <p><strong>//marked.js file</strong></p>
-<pre><code>import { marked } from &quot;marked&quot;;
-import hljs from &quot;highlight.js&quot;; 
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { marked } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;marked&quot;</span>;
+<span class="hljs-keyword">import</span> hljs <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;highlight.js&quot;</span>; 
 
-marked.setOptions({
-    renderer: new marked.Renderer(),
-    highlight: function (code, lang) {
-        const language = hljs.getLanguage(lang) ? lang : &#x27;plaintext&#x27;;
-        return hljs.highlight(code, {language}).value;
+marked.<span class="hljs-title function_">setOptions</span>({
+    <span class="hljs-attr">renderer</span>: <span class="hljs-keyword">new</span> marked.<span class="hljs-title class_">Renderer</span>(),
+    <span class="hljs-attr">highlight</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">code, lang</span>) {
+        <span class="hljs-keyword">const</span> language = hljs.<span class="hljs-title function_">getLanguage</span>(lang) ? lang : <span class="hljs-string">&#x27;plaintext&#x27;</span>;
+        <span class="hljs-keyword">return</span> hljs.<span class="hljs-title function_">highlight</span>(code, {language}).<span class="hljs-property">value</span>;
     },
-    pedantic: false,
-    gfm: true,
-    breaks: false,
-    sanitize: false,
-    smartLists: true,
-    smartypants: false,
-    xhtml: false
+    <span class="hljs-attr">pedantic</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">gfm</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">breaks</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">sanitize</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">smartLists</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">smartypants</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">xhtml</span>: <span class="hljs-literal">false</span>
 }); 
 
-export default marked;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> marked;
 </code></pre>
 <p>marked 옵션에 highlight 설정을 추가시켜 줍시다.<br><br><br></p>
 <p><strong>//index.js(main)</strong></p>
-<pre><code>import * as fs from &quot;fs&quot;;
-import * as postMethods from &quot;./post-generator.js&quot;;
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;fs&quot;</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> postMethods <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./post-generator.js&quot;</span>;
 
-const posts = fs
-  .readdirSync(&#x27;./posts&#x27;)
-  .map(post =&gt; post.slice(0, -3)) // 확장자 제거(md)
-  .map(post =&gt; postMethods.changeMdToObj(post));
+<span class="hljs-keyword">const</span> posts = fs
+  .<span class="hljs-title function_">readdirSync</span>(<span class="hljs-string">&#x27;./posts&#x27;</span>)
+  .<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">post</span> =&gt;</span> post.<span class="hljs-title function_">slice</span>(<span class="hljs-number">0</span>, -<span class="hljs-number">3</span>)) <span class="hljs-comment">// 확장자 제거(md)</span>
+  .<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">post</span> =&gt;</span> postMethods.<span class="hljs-title function_">changeMdToObj</span>(post));
 
-postMethods.createPosts(posts);
+postMethods.<span class="hljs-title function_">createPosts</span>(posts);
 </code></pre>
 <p>동기적으로 실행해야 하기 때문에 readdirSync() 함수를 사용합니다. </p>
 <ol>
@@ -186,29 +185,29 @@ postMethods.createPosts(posts);
 <ol>
 <li>changeMdToObj()</li>
 </ol>
-<pre><code>export const changeMdToObj = postPath =&gt; {
-    const data = fs.readFileSync(`./posts/${postPath}.md`, &#x27;utf-8&#x27;);
-    const content = fm(data); // YAML 추출
-    content.body = marked(content.body); // md 파일을 html 형태로 변환
-    content.path = postPath;
-    return content;
+<pre><code class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">changeMdToObj</span> = postPath =&gt; {
+    <span class="hljs-keyword">const</span> data = fs.<span class="hljs-title function_">readFileSync</span>(<span class="hljs-string">`./posts/<span class="hljs-subst">${postPath}</span>.md`</span>, <span class="hljs-string">&#x27;utf-8&#x27;</span>);
+    <span class="hljs-keyword">const</span> content = <span class="hljs-title function_">fm</span>(data); <span class="hljs-comment">// YAML 추출</span>
+    content.<span class="hljs-property">body</span> = <span class="hljs-title function_">marked</span>(content.<span class="hljs-property">body</span>); <span class="hljs-comment">// md 파일을 html 형태로 변환</span>
+    content.<span class="hljs-property">path</span> = postPath;
+    <span class="hljs-keyword">return</span> content;
 }
 </code></pre>
 <p>fm() 함수로 md 파일의 YAML 부분을 추출하고 body 부분을 marked() 함수를 통해 html 형태로 바꿔주는 코드입니다. fm() 함수의 반환값이 궁금하시다면 <a href="https://www.npmjs.com/package/front-matter">https://www.npmjs.com/package/front-matter</a> 을 참고하시면 되겠습니다. </p>
 <ol start="2">
 <li>createPosts()</li>
 </ol>
-<pre><code>export const createPosts = posts =&gt; {
-    if(!fs.existsSync(&#x27;./public&#x27;)) fs.mkdirSync(&#x27;./public&#x27;); // public 폴더가 없다면 생성
+<pre><code class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">createPosts</span> = posts =&gt; {
+    <span class="hljs-keyword">if</span>(!fs.<span class="hljs-title function_">existsSync</span>(<span class="hljs-string">&#x27;./public&#x27;</span>)) fs.<span class="hljs-title function_">mkdirSync</span>(<span class="hljs-string">&#x27;./public&#x27;</span>); <span class="hljs-comment">// public 폴더가 없다면 생성</span>
 
-    posts.forEach(post =&gt; {
-        if(!fs.existsSync(`./public/${post.path}`)) fs.mkdirSync(`./public/${post.path}`);
+    posts.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">post</span> =&gt;</span> {
+        <span class="hljs-keyword">if</span>(!fs.<span class="hljs-title function_">existsSync</span>(<span class="hljs-string">`./public/<span class="hljs-subst">${post.path}</span>`</span>)) fs.<span class="hljs-title function_">mkdirSync</span>(<span class="hljs-string">`./public/<span class="hljs-subst">${post.path}</span>`</span>);
 
-        fs.writeFile(`./public/${post.path}/index.html`,
-        posthtml(post),
-        (err) =&gt; {
-            if(err) throw err;
-            console.log(`${post.path}/index.html was created successfully`);
+        fs.<span class="hljs-title function_">writeFile</span>(<span class="hljs-string">`./public/<span class="hljs-subst">${post.path}</span>/index.html`</span>,
+        <span class="hljs-title function_">posthtml</span>(post),
+        <span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {
+            <span class="hljs-keyword">if</span>(err) <span class="hljs-keyword">throw</span> err;
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`<span class="hljs-subst">${post.path}</span>/index.html was created successfully`</span>);
         });
     });
 }
@@ -217,12 +216,12 @@ postMethods.createPosts(posts);
 <ol start="3">
 <li>전체 코드</li>
 </ol>
-<pre><code>import * as fs from &quot;fs&quot;;
-import fm from &quot;front-matter&quot;;
-import marked from &quot;./marked.js&quot;;
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;fs&quot;</span>;
+<span class="hljs-keyword">import</span> fm <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;front-matter&quot;</span>;
+<span class="hljs-keyword">import</span> marked <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./marked.js&quot;</span>;
 
-const posthtml = data =&gt; {
-    return `&lt;!DOCTYPE html&gt;
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">posthtml</span> = data =&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -231,36 +230,36 @@ const posthtml = data =&gt; {
     &lt;title&gt;Document&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h1&gt;${data.attributes.title}&lt;/h1&gt;
+    &lt;h1&gt;<span class="hljs-subst">${data.attributes.title}</span>&lt;/h1&gt;
     &lt;br&gt;
-    &lt;p&gt;${new Date(parseInt(data.attributes.date)).toDateString()}&lt;/p&gt;
+    &lt;p&gt;<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-built_in">parseInt</span>(data.attributes.date)).toDateString()}</span>&lt;/p&gt;
 
     &lt;div class=&quot;content&quot;&gt;
-        ${data.body}
+        <span class="hljs-subst">${data.body}</span>
     &lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;`;
+&lt;/html&gt;`</span>;
 }
 
-export const changeMdToObj = postPath =&gt; {
-    const data = fs.readFileSync(`./posts/${postPath}.md`, &#x27;utf-8&#x27;);
-    const content = fm(data); // YAML 추출
-    content.body = marked(content.body); // md 파일을 html 형태로 변환
-    content.path = postPath;
-    return content;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">changeMdToObj</span> = postPath =&gt; {
+    <span class="hljs-keyword">const</span> data = fs.<span class="hljs-title function_">readFileSync</span>(<span class="hljs-string">`./posts/<span class="hljs-subst">${postPath}</span>.md`</span>, <span class="hljs-string">&#x27;utf-8&#x27;</span>);
+    <span class="hljs-keyword">const</span> content = <span class="hljs-title function_">fm</span>(data); <span class="hljs-comment">// YAML 추출</span>
+    content.<span class="hljs-property">body</span> = <span class="hljs-title function_">marked</span>(content.<span class="hljs-property">body</span>); <span class="hljs-comment">// md 파일을 html 형태로 변환</span>
+    content.<span class="hljs-property">path</span> = postPath;
+    <span class="hljs-keyword">return</span> content;
 }
 
-export const createPosts = posts =&gt; {
-    if(!fs.existsSync(&#x27;./public&#x27;)) fs.mkdirSync(&#x27;./public&#x27;); // public 폴더가 없다면 생성
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">createPosts</span> = posts =&gt; {
+    <span class="hljs-keyword">if</span>(!fs.<span class="hljs-title function_">existsSync</span>(<span class="hljs-string">&#x27;./public&#x27;</span>)) fs.<span class="hljs-title function_">mkdirSync</span>(<span class="hljs-string">&#x27;./public&#x27;</span>); <span class="hljs-comment">// public 폴더가 없다면 생성</span>
 
-    posts.forEach(post =&gt; {
-        if(!fs.existsSync(`./public/${post.path}`)) fs.mkdirSync(`./public/${post.path}`);
+    posts.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">post</span> =&gt;</span> {
+        <span class="hljs-keyword">if</span>(!fs.<span class="hljs-title function_">existsSync</span>(<span class="hljs-string">`./public/<span class="hljs-subst">${post.path}</span>`</span>)) fs.<span class="hljs-title function_">mkdirSync</span>(<span class="hljs-string">`./public/<span class="hljs-subst">${post.path}</span>`</span>);
 
-        fs.writeFile(`./public/${post.path}/index.html`,
-        posthtml(post),
-        (err) =&gt; {
-            if(err) throw err;
-            console.log(`${post.path}/index.html was created successfully`);
+        fs.<span class="hljs-title function_">writeFile</span>(<span class="hljs-string">`./public/<span class="hljs-subst">${post.path}</span>/index.html`</span>,
+        <span class="hljs-title function_">posthtml</span>(post),
+        <span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {
+            <span class="hljs-keyword">if</span>(err) <span class="hljs-keyword">throw</span> err;
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`<span class="hljs-subst">${post.path}</span>/index.html was created successfully`</span>);
         });
     });
 }
@@ -323,4 +322,6 @@ export const createPosts = posts =&gt; {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <!-- link set -->
     <script src="../../../src/front/link.js"></script>
+    <!-- highlight.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
 </body>

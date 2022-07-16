@@ -26,8 +26,7 @@ const posthtml = data => {
     <link rel="stylesheet" href="../../../css/styles.css">
 
     <!-- Highlight.js CSS-->
-    <link rel="stylesheet" href="/node_modules/highlight.js/styles/atom-one-dark-reasonable.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/atom-one-dark-reasonable.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/base16/atelier-cave.min.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TXJRS1NF2"></script>
@@ -162,6 +161,8 @@ const posthtml = data => {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <!-- link set -->
     <script src="../../../src/front/link.js"></script>
+    <!-- highlight.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
 </body>`;
 }
 
