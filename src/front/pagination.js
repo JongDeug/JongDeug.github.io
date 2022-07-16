@@ -90,7 +90,8 @@ paintPageNum(currentPage);
 function encodingURI(posts, i){
     const uri = `https://jongdeug.github.io/public/블로그 만들기/정적 사이트 생성기 만들기(using node.js)/index.html`;
     const encoded = encodeURI(uri);
+    console.log(encoded);
     return encoded;
 }
 
-https://jongdeug.github.io/public/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/%EC%A0%95%EC%A0%81%20%EC%82%AC%EC%9D%B4%ED%8A%B8%20%EC%83%9D%EC%84%B1%EA%B8%B0%20%EB%A7%8C%EB%93%A4%EA%B8%B0(using%20node.js)/index.html
+// https://jongdeug.github.io/public/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/%EC%A0%95%EC%A0%81%20%EC%82%AC%EC%9D%B4%ED%8A%B8%20%EC%83%9D%EC%84%B1%EA%B8%B0%20%EB%A7%8C%EB%93%A4%EA%B8%B0(using%20node.js)/index.html
