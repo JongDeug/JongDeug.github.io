@@ -3,7 +3,9 @@ $breadcrumb-divider: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Righteous&display=swap");
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
-$color-rose: #d7a7aa;
+$background-color: #00c9c8;
+$color-shade: #e6f4f1;
+$code-color: #FCFCD4;
 
 @mixin zero-margin($up-dn, $left-right) {
     margin: 0 auto;
@@ -15,8 +17,8 @@ body {
 }
 
 .jumbotron {
-    background: #d7a7aa;
-    color: floralwhite;
+    background: $background-color;
+    color: white;
     @include zero-margin(100px, 0);
 }
 
@@ -33,7 +35,7 @@ body {
 }
 
 .footer {
-    background: $color-rose;
+    background: $background-color;
     @include zero-margin(20px, 0);
 }
 
@@ -68,7 +70,7 @@ body {
     li {
         a {
             background-color: white;
-            color: $color-rose;
+            color: $background-color;
         }
     }
 }
@@ -77,8 +79,8 @@ body {
     .active {
         a {
             color: white;
-            background-color: $color-rose !important;
-            border: solid 1px $color-rose !important;
+            background-color: $background-color !important;
+            border: solid 1px $background-color !important;
         }
     }
 }
@@ -87,7 +89,7 @@ body {
     li {
         a:focus,
         a:hover {
-            color: $color-rose;
+            color: $background-color;
         }
     }
 }
@@ -100,10 +102,9 @@ body {
     }
 }
 
-
 // posts
 code {
-    background-color: #ffebee;
+    background-color: $code-color;
     display: inline-block;
     padding: 10px;
     border-radius: 5%;
@@ -115,31 +116,31 @@ code {
         font-size: 1.1em;
     }
 
-    h2{
+    h2 {
         margin-top: 20px;
     }
 
-    h2:first-child{
+    h2:first-child {
         margin-top: 0;
     }
 
-    p{
+    p {
         font-size: 1.1em;
     }
 
-    a{
-        word-wrap: break-word;  //띄어쓰기가 없는 긴 단어를 어떻게 처리할지 정합니다.
+    a {
+        word-wrap: break-word; //띄어쓰기가 없는 긴 단어를 어떻게 처리할지 정합니다.
     }
 }
-.homepage-posts{
+.homepage-posts {
     transition: box-shadow 0.4s ease-in-out;
 }
-.homepage-posts:hover{
-    box-shadow: inset 0 -40em 0 0 #dbe0e2;
+.homepage-posts:hover {
+    box-shadow: inset 0 -40em 0 0 $color-shade;
 }
 
-.accordion-body{
-    a{
+.accordion-body {
+    a {
         text-decoration: none;
     }
 }
