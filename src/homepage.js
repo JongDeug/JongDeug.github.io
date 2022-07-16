@@ -104,7 +104,7 @@ const indexhtml = posts => {
                         <small>${new Date(parseInt(post.attributes.date)).toDateString()}</small>
                         <p class="mt-4">${post.attributes.description}</p>
                         </div> 
-                    `).join('') // 배열이라 joing 해주지 않으면 ','가 표시됨.
+                    `).join('') // 배열이라 joing 해주지 않으면 ','가 표시됨.       + path 끝에 '/'을 붙여주지 않으면 url을 못찾는 에러가 남.
                 } 
             </div>
             <!-- //content -->

@@ -20,3 +20,7 @@ https://betterprogramming.pub/how-to-build-a-simple-static-site-generator-using-
 <import export>
 export default값이 있는 경우에는 import * as bla from "bla" 에서 bla.뭐시기()가 안되고 bla.default.뭐시기()로 됨
 없는 경우에는 괜찮음
+
+
+<error 개선>
+url이 한글일 경우 path 끝에 '/'를 붙여주지 않는 경우 경로를 찾지 못해 에러가 났음.

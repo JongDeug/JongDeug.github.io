@@ -142,7 +142,7 @@ function createAccordionItems(posts) {
                 <div id="collapse${index}" class="accrodion-collapse collapse" data-bs-parent="#postList">
                     ${posts.filter(post => post.attributes.subject === subject)
                 .map(post => `<div class="accordion-body">
-                                    <a href="./${config.dev.outputdir}/${post.attributes.subject}/${post.path}">${post.attributes.title}</a>
+                                    <a href="./${config.dev.outputdir}/${post.attributes.subject}/${post.path}/">${post.attributes.title}</a>
                             </div>`).join("")}
                 </div>
             </div>
