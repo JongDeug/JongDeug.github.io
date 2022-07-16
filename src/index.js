@@ -12,7 +12,8 @@ import addPostspage from "./postspage.js";
 const posts = fs
     .readdirSync(config.dev.postdir)
     .map(post => post.slice(0, -3)) // 확장자 제거(.md)
-    .map(post => postMethods.changeMdToObj(post));
+    .map(post => postMethods.changeMdToObj(post))
+    .sort((a,b) => {return b.attributes.date - a.attributes.date}); // 내림차순 정렬
 
 // 변환된 posts 객체를 통해 html 파일 생성
 postMethods.createPosts(posts);
