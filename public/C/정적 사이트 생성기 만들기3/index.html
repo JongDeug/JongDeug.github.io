@@ -12,11 +12,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
-    <!-- highlight CSS-->
-    <link rel="stylesheet" href="./node_modules/highlight.js/styles/atom-one-dark.css"></link> 
-    
     <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../../../css/styles.css">
+
+    <!-- Highlight.js CSS-->
+    <link rel="stylesheet" href="/node_modules/highlight.js/styles/atom-one-dark-reasonable.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/atom-one-dark-reasonable.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TXJRS1NF2"></script>
@@ -43,10 +44,10 @@
                         <a href="/" class="nav-link active"><i class="bi bi-house-fill"></i> Home</a>
                     </li>
                     <li class="nav-item mb-1 mb-sm-auto">
-                        <a href="./posts.html" class="nav-link"><i class="bi bi-stickies-fill"></i> Posts</a>
+                        <a href="../../../posts.html" class="nav-link"><i class="bi bi-stickies-fill"></i> Posts</a>
                     </li>
                     <li class="nav-item mb-1 mb-sm-auto">
-                        <a href="./about.html" class="nav-link"><i class="bi bi-file-person-fill"></i> About Me</a>
+                        <a href="../../../about.html" class="nav-link"><i class="bi bi-file-person-fill"></i> About Me</a>
                     </li>
                 </ul>
             </div>
@@ -67,9 +68,9 @@
 
     <main class="main">
         <div class="container">
-            <div class="row row-profile pb-5 border-bottom">
-                <div class="col text-center">
-                    <img src="img/profile.jpg" alt="" class="img-thumbnail rounded-circle profile">
+            <div class="row row-profile">
+                <div class="col-12 text-center">
+                    <img src="../../../img/profile.jpg" alt="" class="img-thumbnail rounded-circle profile">
                     <h2 class="mb-3">JongDeug</h2>
                     <p>까먹으면 다시 여기로!!!!</p>
 
@@ -81,42 +82,62 @@
                             &middot;
                         </li>
                         <li class="list-inline-item">
-                            <a href="./about.html" class="text-decoration-none link-dark"><i class="bi bi-file-person-fill"></i>
+                            <a href="../../../about.html" class="text-decoration-none link-dark"><i class="bi bi-file-person-fill"></i>
                                 About</a>
                         </li>
                     </ul>
                 </div>
+                <hr>
+                <!-- //profile -->
+                <nav>
+                <ol class="col-12 breadcrumb ps-1 mb-2 pt-3">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../../../posts.html">C</a></li>
+                    <li class="breadcrumb-item active">정적 사이트 생성기 만들기(using node.js)</li>
+                </ol>
+                </nav>
+                <!-- //breadcrumb -->
+                <div class="col pb-3">
+                    <h1>정적 사이트 생성기 만들기(using node.js)</h1>
+                    <p class="ps-1">Fri Jul 15 2022</p>
+                </div>
+                <hr>
+                <!-- //head, date -->
             </div>
-            <!-- //profile -->
+                
+            <div class="row row-content">
+                <h2 id="정적-사이트-생성기란">정적 사이트 생성기란?</h2>
+<p>정적 사이트 생성기(SSG, Static Site Generator).  정적 사이트 생성기란 말 그대로 정적 사이트를 생성해 주는 프로그램을 말합니다. 사용자들이 입력한 값 등 요청에 의하여 생성되는 동적 사이트와 달리,  정적 사이트는 서버에 미리 저장된 파일들을 그대로 전달합니다. 그래서 작성자가 글을 작성하고 업데이트하는 것 외에 별달리 기능이 없는 블로그에 많이 사용됩니다.</p>
+<p>많이들 알고 계시는 Jekyll, Hugo, Hexo 등 여러 가지 정적 사이트 생성기가 존재합니다. 하지만 저는 블로그 자체를 직접 만들어보고 싶다는 생각에 구글링을 하여 node.js로 만들 수 있는 방법을 찾았습니다.    </p>
+<h2 id="핵심">핵심</h2>
+<p>md 파일을 html 파일로 변환하는 것이 핵심입니다.<br>1차적으로 모듈들을 사용하여 데이터를 가공하고, 가공한 데이터를 가지고 템플릿에 적용하여 html 파일을 생성합니다.    </p>
+<h2 id="모듈-설치">모듈 설치</h2>
+<ul>
+<li>front-matter  : YAML 추출과 md 파일 내용 등을 객체로 추출하기 위해 사용.</li>
+<li>marked : md 파일 내용을 html 코드로 변환하기 위해 사용.</li>
+<li>highlight.js : 코드를 이쁘게 정돈해 주기 위한 라이브러리.</li>
+</ul>
+<p>test 다른 폴더에 과연 댓글이 달릴지?</p>
 
-            <div class="posts">
-                <div class="row row-content">
-                        <h3><a href="./public/블로그 만들기/정적 사이트 생성기 만들기(using node.js)/" class="text-decoration-none link-danger fst-italic">정적 사이트 생성기 만들기(using node.js)</a></h3>
-                        <small>Fri Jul 15 2022</small>
-                        <p class="mt-4">정적 사이트 생성기를 만드는데 필요한 핵심 기능을 설명합니다.</p>
-                        </div> 
-                    <div class="row row-content">
-                        <h3><a href="./public/블로그 만들기/정적 사이트 생성기 만들기2/" class="text-decoration-none link-danger fst-italic">정적 사이트 생성기 만들기(using node.js)</a></h3>
-                        <small>Fri Jul 15 2022</small>
-                        <p class="mt-4">정적 사이트 생성기를 만드는데 필요한 핵심 기능을 설명합니다.</p>
-                        </div> 
-                    <div class="row row-content">
-                        <h3><a href="./public/C/정적 사이트 생성기 만들기3/" class="text-decoration-none link-danger fst-italic">정적 사이트 생성기 만들기(using node.js)</a></h3>
-                        <small>Fri Jul 15 2022</small>
-                        <p class="mt-4">정적 사이트 생성기를 만드는데 필요한 핵심 기능을 설명합니다.</p>
-                        </div> 
-                     
             </div>
             <!-- //content -->
 
-            <nav class="row mt-3">
-                <ul class="pagination justify-content-center">
-                </ul>
-            </nav>
-            <!-- //pagination-->
+            <!-- //utterances -->
+            <div class="row">
+                <div class="col-12">
+                    <script src="https://utteranc.es/client.js"
+                    repo="JongDeug/JongDeug.github.io"
+                    issue-term="pathname"
+                    theme="gruvbox-dark"
+                    crossorigin="anonymous"
+                    async>
+                    </script> 
+                </div> 
+            </div>
         </div>
     </main>
     <!-- //main -->
+
 
     <footer class="footer">
         <div class="container">
@@ -125,8 +146,8 @@
                     <ul class="list-inline">
                         <li class="list-inline-item">Links : </li>
                         <li class="list-inline-item"><a href="/">Home</a></li>
-                        <li class="list-inline-item"><a href="./posts.html">Posts</a></li>
-                        <li class="list-inline-item"><a href="./about.html">About Me</a></li>
+                        <li class="list-inline-item"><a href="../../../posts.html">Posts</a></li>
+                        <li class="list-inline-item"><a href="../../../about.html">About Me</a></li>
                     </ul>
                 </div>
             </div>
@@ -141,9 +162,6 @@
 
     <!-- Bootstrap Javascript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    
-    <!-- Front Javascript -->
-    <script src="./src/front/pagination.js"></script>
+    <!-- link set -->
+    <script src="../../../src/front/link.js"></script>
 </body>
-
-</html>
