@@ -107,8 +107,8 @@
                 
             <div class="row row-content">
                 <h2 id="정적-사이트-생성기란">정적 사이트 생성기란?</h2>
-<p>정적 사이트 생성기(SSG, Static Site Generator).  정적 사이트 생성기란 말 그대로 정적 사이트를 생성해 주는 프로그램을 말합니다. 사용자들이 입력한 값 등 요청에 의하여 생성되는 동적 사이트와 달리,  정적 사이트는 서버에 미리 저장된 파일들을 그대로 전달합니다. 그래서 작성자가 글을 작성하고 업데이트하는 것 외에 별달리 기능이 없는 블로그에 많이 사용됩니다.</p>
-<p>많이들 알고 계시는 Jekyll, Hugo, Hexo 등 여러 가지 정적 사이트 생성기가 존재합니다. 하지만 저는 블로그 자체를 직접 만들어보고 싶다는 생각에 구글링을 하여 node.js로 만들 수 있는 방법을 찾았습니다.    </p>
+<p>정적 사이트 생성기(SSG, Static Site Generator).  정적 사이트 생성기란 말 그대로 정적 사이트를 생성해 주는 프로그램을 말합니다. 웹 페이지는 크게 정적 사이트, 동적 사이트로 나뉩니다. 사용자들이 입력한 값 등 요청에 의하여 생성되는 사이트를 동적 사이트라 하며,  서버에 미리 저장된 파일들을 그대로 전달하는 사이트를 정적 사이트라 합니다. 그래서 작성자가 글을 작성하고 업데이트하는 것 외에 별달리 기능이 없는 블로그 같은 곳에 정적 사이트를 많이 사용합니다.</p>
+<p>Jekyll, Hugo, Hexo 등 여러 가지 정적 사이트 생성기가 있습니다. 이것들을 사용하면 굉장히 빠르고 쉽게 사이트를 만들 수 있습니다. 하지만 저는 블로그 자체를 직접 만들어보고 싶어서 node.js로 만들 수 있는 방법을 찾게 되었습니다.    </p>
 <h2 id="핵심">핵심</h2>
 <p>md 파일을 html 파일로 변환하는 것이 핵심입니다.<br>1차적으로 모듈들을 사용하여 데이터를 가공하고, 가공한 데이터를 가지고 템플릿에 적용하여 html 파일을 생성합니다.    </p>
 <h2 id="모듈-설치">모듈 설치</h2>
@@ -140,7 +140,7 @@
  },
 &quot;type&quot;: &quot;module&quot;
 </code></pre>
-<p>scripts에  build 부분을 추가하고, import 문법을 사용하기 위해 type을 추가시킵니다.    </p>
+<p>scripts에 build 부분을 추가하고, import 문법을 사용하기 위해 type을 추가시킵니다.    </p>
 <h2 id="코드">코드</h2>
 <p><strong>//marked.js file</strong></p>
 <pre><code>import { marked } from &quot;marked&quot;;
@@ -194,7 +194,7 @@ postMethods.createPosts(posts);
     return content;
 }
 </code></pre>
-<p>fm() 함수로 md 파일의 YAML 부분을 추출하고 body 부분을 marked() 함수를 통해 html 형태로 바꿔주는 코드입니다. fm 함수의 반환값이 궁금하시다면 <a href="https://www.npmjs.com/package/front-matter">https://www.npmjs.com/package/front-matter</a> 을 참고하시면 되겠습니다. </p>
+<p>fm() 함수로 md 파일의 YAML 부분을 추출하고 body 부분을 marked() 함수를 통해 html 형태로 바꿔주는 코드입니다. fm() 함수의 반환값이 궁금하시다면 <a href="https://www.npmjs.com/package/front-matter">https://www.npmjs.com/package/front-matter</a> 을 참고하시면 되겠습니다. </p>
 <ol start="2">
 <li>createPosts()</li>
 </ol>
@@ -213,7 +213,7 @@ postMethods.createPosts(posts);
     });
 }
 </code></pre>
-<p>public 폴더가 존재하지 않는다면 생성을 해주고, posthtml() 템플릿을 통해 html 파일을 public 폴더 안에 생성해 줍니다. </p>
+<p>public 폴더가 존재하지 않는다면 생성을 해주고, posthtml() 템플릿을 통해 index.html 파일을 public 폴더 안에 생성해 줍니다. </p>
 <ol start="3">
 <li>전체 코드</li>
 </ol>
