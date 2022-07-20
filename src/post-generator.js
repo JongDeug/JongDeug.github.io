@@ -108,7 +108,7 @@ const posthtml = data => {
                 <!-- //breadcrumb -->
                 <div class="col pb-3">
                     <h1>${data.attributes.title}</h1>
-                    <p class="ps-1">${new Date(data.attributes.date).toDateString()}</p>
+                    <p class="ps-1">${new Date(data.attributes.date).toLocaleDateString('ko-KR')}</p>
                 </div>
                 <hr>
                 <!-- //head, date -->

@@ -101,7 +101,7 @@ const indexhtml = posts => {
                 ${posts
                     .map(post => `<div class="row row-content homepage-posts">
                         <h3><a href="./public/${post.attributes.subject}/${post.path}/" class="text-decoration-none link-danger fst-italic">${post.attributes.title}</a></h3>
-                        <small>${new Date(post.attributes.date).toDateString()}</small>
+                        <small>${new Date(post.attributes.date).toLocaleDateString('ko-KR')}</small>
                         <p class="mt-4">${post.attributes.description}</p>
                         </div> 
                     `).join('') // 배열이라 joing 해주지 않으면 ','가 표시됨.       + path 끝에 '/'을 붙여주지 않으면 url을 못찾는 에러가 남.
