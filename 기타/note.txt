@@ -26,6 +26,8 @@ export default값이 있는 경우에는 import * as bla from "bla" 에서 bla.�
 - url이 한글일 경우 path 끝에 '/'를 붙여주지 않는 경우 경로를 찾지 못해 에러가 났음.
 - highlight.js 적용이 안되길래 확인해봤더니 plaintext로 죄다 나왔음. markdown에 무슨 언어인지 명시해주니 해결됐음.
 
+<code 개선>
+- script 태그에 type=module 추가해서 겹치지 않게끔 예방함. 
 
 <블로그 개선>
 - 날짜 포맷을 유닉스에서 ISO(The International Standard)로 바꿈

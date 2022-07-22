@@ -168,7 +168,7 @@ const posthtml = data => {
     <!-- highlight.js -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <!-- front -->
-    <script src="../../../src/front/link.js"></script>
+    <script type="module" src="../../../src/front/link.js"></script>
 </body>`;
 }
 
